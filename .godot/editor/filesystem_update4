@@ -1,9 +1,0 @@
-res://entities/slime.tscn
-res://entities/scripts/slime.gd
-res://scenes/tileset/tileset.tres
-res://entities/scripts/player.gd
-res://scenes/starter forest.tscn
-res://scenes/title.tscn
-res://scenes/city.tscn
-res://entities/Player.tscn
-res://scenes/charater_select.tscn
