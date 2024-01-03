@@ -1,0 +1,68 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://c4203cak34ng7"]
+
+[ext_resource type="Texture2D" uid="uid://d3l76dg6w8b5c" path="res://entities/art/acc/beard.png" id="1_q7x22"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1otvc"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yutu8"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vh6k"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyy6x"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bdy5"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_056mj"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14vqo"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p4wd"]
+atlas = ExtResource("1_q7x22")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+resource_name = "Acc"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1otvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yutu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vh6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyy6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bdy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_056mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14vqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p4wd")
+}],
+"loop": true,
+"name": &"front walk",
+"speed": 5.0
+}]

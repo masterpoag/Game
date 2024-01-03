@@ -1,0 +1,68 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3 uid="uid://c1146jod4wihd"]
+
+[ext_resource type="Texture2D" uid="uid://bo0uu6g8gd0pc" path="res://entities/art/eyes/eyes.png" id="1_sadw2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l7d7"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnf1n"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xogv0"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dpf3"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31u76"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dast"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wna0"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd82v"]
+atlas = ExtResource("1_sadw2")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+resource_name = "eyes"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l7d7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnf1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xogv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dpf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31u76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dast")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wna0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd82v")
+}],
+"loop": true,
+"name": &"front walk",
+"speed": 5.0
+}]
