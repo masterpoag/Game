@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvfxil5wxawv"]
+[gd_scene load_steps=22 format=3 uid="uid://cvfxil5wxawv"]
 
+[ext_resource type="Script" path="res://scenes/scripts/startgame.gd" id="1_avssh"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="1_eu5ge"]
 [ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_g4ckc"]
 [ext_resource type="Script" path="res://scenes/scripts/charater select model.gd" id="2_od15t"]
@@ -1009,6 +1010,7 @@ _data = {
 }
 
 [node name="Charater select" type="Node2D"]
+script = ExtResource("1_avssh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(998, 524)
@@ -1132,8 +1134,28 @@ offset_bottom = 496.0
 theme_override_fonts/font = ExtResource("10_ol18p")
 text = "Eyes"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+texture_filter = 5
+offset_left = 777.0
+offset_top = 414.0
+offset_right = 928.0
+offset_bottom = 445.0
+theme_override_fonts/normal_font = ExtResource("10_ol18p")
+text = "Create Your Character "
+
+[node name="Start" type="Button" parent="."]
+texture_filter = 5
+offset_left = 753.0
+offset_top = 591.0
+offset_right = 910.0
+offset_bottom = 631.0
+tooltip_text = "Click here when your done creating your character"
+theme_override_fonts/font = ExtResource("10_ol18p")
+text = "Done"
+
 [connection signal="pressed" from="hair" to="CharacterBody2D" method="_on_hair_pressed"]
 [connection signal="pressed" from="body" to="CharacterBody2D" method="_on_body_pressed"]
 [connection signal="pressed" from="acc" to="CharacterBody2D" method="_on_acc_pressed"]
 [connection signal="pressed" from="clothes" to="CharacterBody2D" method="_on_clothes_pressed"]
 [connection signal="pressed" from="eyes" to="CharacterBody2D" method="_on_eyes_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

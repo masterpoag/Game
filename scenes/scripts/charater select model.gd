@@ -6,20 +6,21 @@ extends CharacterBody2D
 @onready var hairsprite = $sprite/Hair
 @onready var accsprite = $sprite/Acc
 const sprites = preload("res://entities/art/art.gd")
-Global.playerAttacting = 2
-Global.hair = randi_range(0,sprites.hair.size()-1)
-Global.clothes = randi_range(0,sprites.clothes_spritesheet.size()-1)
-Global.eyes = randi_range(0,sprites.eyes_spritesheet.size()-1)
-Global.body = randi_range(0,sprites.body_spritesheet.size()-1)
-Global.acc = randi_range(0,sprites.acc_spritesheet.size()-1)
+
 
 
 func _ready():
-	hairChange(hair)
-	bodyChange(body)
-	eyeChange(eyes)
-	clothesChange(clothes)
-	accChange(acc)
+	Global.hair = randi_range(0,sprites.hair.size()-1)
+	Global.clothes = randi_range(0,sprites.clothes_spritesheet.size()-1)
+	Global.eyes = randi_range(0,sprites.eyes_spritesheet.size()-1)
+	Global.body = randi_range(0,sprites.body_spritesheet.size()-1)
+	Global.acc = randi_range(0,sprites.acc_spritesheet.size()-1)
+	
+	hairChange(Global.hair)
+	bodyChange(Global.body)
+	eyeChange(Global.eyes)
+	clothesChange(Global.clothes)
+	accChange(Global.acc)
 	
 
 func hairChange(factor):
@@ -46,29 +47,29 @@ func _process(delta):
 
 
 func _on_hair_pressed():
-	hair += 1
-	hair %= sprites.hair.size()
-	hairChange(hair)
+	Global.hair += 1
+	Global.hair %= sprites.hair.size()
+	hairChange(Global.hair)
 
 func _on_body_pressed():
-	body += 1
-	body %= sprites.body_spritesheet.size()
-	bodyChange(body)
+	Global.body += 1
+	Global.body %= sprites.body_spritesheet.size()
+	bodyChange(Global.body)
 
 
 func _on_acc_pressed():
-	acc += 1
-	acc %= sprites.acc_spritesheet.size()
-	accChange(acc)
+	Global.acc += 1
+	Global.acc %= sprites.acc_spritesheet.size()
+	accChange(Global.acc)
 
 
 func _on_clothes_pressed():
-	clothes += 1
-	clothes %= sprites.clothes_spritesheet.size()
-	clothesChange(clothes)
+	Global.clothes += 1
+	Global.clothes %= sprites.clothes_spritesheet.size()
+	clothesChange(Global.clothes)
 
 
 func _on_eyes_pressed():
-	eyes += 1
-	eyes %= sprites.eyes_spritesheet.size()
-	eyeChange(eyes)
+	Global.eyes += 1
+	Global.eyes %= sprites.eyes_spritesheet.size()
+	eyeChange(Global.eyes)
