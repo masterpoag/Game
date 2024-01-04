@@ -1090,16 +1090,6 @@ y_sort_enabled = true
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_sno86")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2(1, 18)
-zoom = Vector2(4, 4)
-limit_left = -48
-limit_top = -95
-limit_right = 544
-limit_bottom = 392
-limit_smoothed = true
-
 [node name="attackTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true

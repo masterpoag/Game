@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://k6q3cfsyom0q"]
+[gd_scene load_steps=6 format=3 uid="uid://k6q3cfsyom0q"]
 
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="1_5nl4s"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="1_hcbfy"]
 [ext_resource type="Script" path="res://scenes/scripts/town warp.gd" id="3_tombf"]
+[ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="4_klrxs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyef1"]
 size = Vector2(34, 52.5)
@@ -48,5 +49,7 @@ script = ExtResource("3_tombf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-65, 41.75)
 shape = SubResource("RectangleShape2D_kyef1")
+
+[node name="Player camera" parent="." instance=ExtResource("4_klrxs")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

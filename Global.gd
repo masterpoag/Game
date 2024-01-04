@@ -15,3 +15,6 @@ var clothes_mod = Color(1, 1, 1, 1)
 var acc_mod = Color(1, 1, 1, 1)
 var hair_mod = Color(1, 1, 1, 1)
 var eyes_mod = Color(1, 1, 1, 1)
+
+var posx
+var posy

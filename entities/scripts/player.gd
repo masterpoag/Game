@@ -33,7 +33,6 @@ var last = 0
 
 
 func _ready():
-	print(get_tree().get_current_scene().get_name())
 	if !Global.firstvisit && get_tree().get_current_scene().get_name() == "city":
 		position.x= -38
 		position.y= 47
@@ -125,6 +124,8 @@ func playerMovement(delta):
 			velocity.x = 0
 			velocity.y = 0
 		move_and_slide()
+		Global.posx = position.x
+		Global.posy = position.y
 		if(Input.is_action_pressed("attack")):
 			play_anim(2)
 
