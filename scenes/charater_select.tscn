@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cvfxil5wxawv"]
+[gd_scene load_steps=22 format=3 uid="uid://cvfxil5wxawv"]
 
 [ext_resource type="Script" path="res://scenes/scripts/startgame.gd" id="1_avssh"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="1_eu5ge"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dvkteobcqucd" path="res://entities/art/shadow.png" id="8_e71rm"]
 [ext_resource type="FontFile" uid="uid://dad7lqam4k1rw" path="res://GUI/Comfortaa-Bold.ttf" id="11_euwdh"]
 [ext_resource type="FontFile" uid="uid://40r307w0wekr" path="res://GUI/assets/font/Comfortaa-Bold.ttf" id="11_surv5"]
-[ext_resource type="Script" path="res://scenes/scripts/ColorPicker.gd" id="12_g54ck"]
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001
@@ -1159,9 +1158,8 @@ layout_mode = 2
 [node name="ColorPicker" type="ColorPicker" parent="CanvasLayer/MarginContainer/VBoxContainer/MarginContainer"]
 texture_filter = 2
 layout_mode = 2
-tooltip_text = "Change the color to what you want it to be"
+tooltip_text = "Select the modulation of the texture. (Its not the exact color so you might need to play with it to find the color you are looking for)"
 can_add_swatches = false
-script = ExtResource("12_g54ck")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 2
