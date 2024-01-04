@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cuox1o5iwy1ms"]
+[gd_scene load_steps=23 format=3 uid="uid://cuox1o5iwy1ms"]
 
 [ext_resource type="Script" path="res://entities/scripts/player.gd" id="1_4gp3x"]
 [ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_bvyke"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bui5x2cxytu7u" path="res://entities/art/hair/bob .png" id="5_w206r"]
 [ext_resource type="Texture2D" uid="uid://d3l76dg6w8b5c" path="res://entities/art/acc/beard.png" id="6_5jdru"]
 [ext_resource type="Texture2D" uid="uid://dvkteobcqucd" path="res://entities/art/shadow.png" id="7_mxq67"]
+[ext_resource type="Script" path="res://entities/Health.gd" id="9_63g6m"]
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001
@@ -1136,6 +1137,9 @@ disabled = true
 
 [node name="invframes" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("9_63g6m")
 
 [connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="combatTimer" to="." method="_on_combat_timer_timeout"]

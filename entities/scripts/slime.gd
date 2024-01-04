@@ -11,16 +11,26 @@ var inAttackRange = false
 var inCooldown = false
 var startedTimer = false
 var damageable = true
-
-func _on_dealthtimer_timeout():
-	self.queue_free()
-	
-# testing 
+var invable = 0
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	add_to_group("Enemy")
 
+func _process(delta):
+	if !$invFrames.is_stopped():
+		invable+= 1
+		if invable % 2 == 0:
+			self.modulate = "ffffffff"
+		else:
+			self.modulate = "ffffff00"
+
+
+
+func _on_dealthtimer_timeout():
+	self.queue_free()
+	
+# testing 
 
 # end testing
 
@@ -37,7 +47,10 @@ func _physics_process(delta):
 		
 		
 		if enemyDetected:
-			velocity = (position.direction_to(enemy.position) * speed)*abs((self.position-enemy.position)/90)
+			if $invFrames.is_stopped():
+				velocity = (position.direction_to(enemy.position) * speed)*abs((self.position-enemy.position)/90)
+			else:
+				velocity = (position.direction_to(enemy.position) * speed)*abs((self.position-enemy.position)/190)
 			$AnimatedSprite2D.play("jump")
 			if(enemy.position.x - position.x) < 0:
 				$AnimatedSprite2D.flip_h = true
@@ -87,6 +100,8 @@ func _on_attack_cooldown_timeout():
 func _on_inv_frames_timeout():
 	damageable = true
 	$invFrames.stop()
+	self.modulate = "ffffffff"
+	invable = 0
 
 func healthUpdate():
 	var healthbar = $healthbar
@@ -103,7 +118,8 @@ func _on_hurtbox_body_entered(body):
 	if body.is_in_group("Player"):
 		globalbody = body
 		print("hit!")
-		body.enemy_attack(damage)
+		if $invFrames.is_stopped():
+			body.enemy_attack(damage)
 		inCooldown = true
 
 

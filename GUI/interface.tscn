@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://xis4df8vo7uh"]
+
+[ext_resource type="Script" path="res://GUI/Scripts/interface.gd" id="1_80bqf"]
+[ext_resource type="PackedScene" uid="uid://cbk2exn6r7804" path="res://GUI/bar.tscn" id="1_icbkr"]
+[ext_resource type="PackedScene" uid="uid://bswnjel8s066x" path="res://GUI/xp.tscn" id="2_ieqo2"]
+[ext_resource type="Script" path="res://GUI/Scripts/healthbar.gd" id="3_5ychv"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80bqf")
+
+[node name="HP" parent="." instance=ExtResource("1_icbkr")]
+layout_mode = 0
+
+[node name="Label" parent="HP/NinePatchRect" index="0"]
+script = ExtResource("3_5ychv")
+
+[node name="XP" parent="." instance=ExtResource("2_ieqo2")]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 56.0
+offset_right = 503.0
+offset_bottom = 109.0
+
+[connection signal="health_changed" from="." to="HP/TextureProgressBar" method="_on_interface_health_changed"]
+[connection signal="max_health_changed" from="." to="HP/NinePatchRect/Label2" method="_on_interface_max_health_changed"]
+
+[editable path="HP"]
+[editable path="XP"]

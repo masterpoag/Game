@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
+signal health_changed(value, displacement)
+signal exp_change(value)
+signal max_health_changed(value)
+
 
 @onready var bodysprite = $sprite/Body
 @onready var clothessprite = $sprite/Clothes
 @onready var eyessprite = $sprite/Eyes
 @onready var hairsprite = $sprite/Hair
 @onready var accsprite = $sprite/Acc
+
 const sprites = preload("res://entities/art/art.gd")
 var speed = 75
 var current_dir
@@ -159,6 +164,7 @@ func enemy_attack(hit):
 	if damageable:
 		damageable = false
 		print("you took damage")
+		health_changed.emit(health-hit,-hit)
 		health -= hit
 		$combatTimer.start()
 		$invframes.start()
@@ -192,9 +198,11 @@ func healthregin():
 
 func _on_out_of_combat_heal_timeout():
 	if health != maxhealth:
+		health_changed.emit(health+5,5)
 		health += 5
 		if health > maxhealth:
 			health = maxhealth
+			health_changed.emit(maxhealth,5)
 	else:
 		$outOfCombatHeal.stop()
 		healingStart = false

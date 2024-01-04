@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=39 format=3 uid="uid://kljhv66b1iib"]
+[gd_resource type="TileSet" load_steps=41 format=3 uid="uid://kljhv66b1iib"]
 
 [ext_resource type="Texture2D" uid="uid://cy5yguoovwngh" path="res://art/sprites/tilesets/grass.png" id="1_mqvfa"]
 [ext_resource type="Texture2D" uid="uid://dk4qj1ofo0hjr" path="res://art/sprites/tilesets/plains.png" id="2_8o86a"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://diqjj2bonjagm" path="res://art/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="9_l53ac"]
 [ext_resource type="Texture2D" uid="uid://bcf4t7ckqhic1" path="res://art/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="10_wa3mw"]
 [ext_resource type="Texture2D" uid="uid://dy27u8ajyyyc0" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic Furniture.png" id="11_0pb6q"]
+[ext_resource type="Texture2D" uid="uid://bkvyjx3iiwekd" path="res://GUI/assets/bg.png" id="11_gh3mm"]
 [ext_resource type="Texture2D" uid="uid://bgmxqnecd4n8c" path="res://art/town free/free version.png" id="11_p7v33"]
 [ext_resource type="Texture2D" uid="uid://bcrdt5kxxkxy8" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic Grass Biom things 1.png" id="12_fjkdu"]
 [ext_resource type="Texture2D" uid="uid://ddktpc2dfik3i" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png" id="13_vopfc"]
@@ -5583,6 +5584,15 @@ texture = ExtResource("10_wa3mw")
 9:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:20/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcri0"]
+texture = ExtResource("11_gh3mm")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(1366, 768)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebogl"]
 texture = ExtResource("3_5536v")
 0:0/0 = 0
@@ -6965,4 +6975,5 @@ sources/4 = SubResource("TileSetAtlasSource_ytrfm")
 sources/5 = SubResource("TileSetAtlasSource_rp68t")
 sources/16 = SubResource("TileSetAtlasSource_yetdi")
 sources/17 = SubResource("TileSetAtlasSource_vjix4")
+sources/19 = SubResource("TileSetAtlasSource_kcri0")
 pattern_0 = SubResource("TileMapPattern_yvfek")

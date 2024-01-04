@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://bswnjel8s066x"]
+
+[ext_resource type="Texture2D" uid="uid://dojxepvfftip3" path="res://GUI/assets/GUI/label_HP_bg.png" id="1_xs67v"]
+[ext_resource type="FontFile" uid="uid://dad7lqam4k1rw" path="res://GUI/Comfortaa-Bold.ttf" id="3_7vfxc"]
+[ext_resource type="Texture2D" uid="uid://cb0aosu55sd2s" path="res://GUI/assets/GUI/energy_bar_bg.png" id="3_q6fut"]
+[ext_resource type="Texture2D" uid="uid://cmif4gi5h722j" path="res://GUI/assets/GUI/energy_bar_fill.png" id="4_eflep"]
+[ext_resource type="Script" path="res://GUI/Scripts/EXP.gd" id="5_axxpc"]
+
+[node name="XP" type="HBoxContainer"]
+offset_left = 1.0
+offset_top = 55.0
+offset_right = 501.0
+offset_bottom = 108.0
+scale = Vector2(0.8, 0.8)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_xs67v")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -9.5
+offset_bottom = 13.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7vfxc")
+text = "0/25
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="NinePatchRect"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -12.5
+offset_right = 58.0
+offset_bottom = 17.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7vfxc")
+theme_override_font_sizes/font_size = 23
+text = "EXP
+"
+
+[node name="bar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 25.0
+value = 5.0
+texture_under = ExtResource("3_q6fut")
+texture_progress = ExtResource("4_eflep")
+script = ExtResource("5_axxpc")
