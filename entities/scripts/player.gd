@@ -38,6 +38,14 @@ func _ready():
 	eyeChange(Global.eyes)
 	clothesChange(Global.clothes)
 	accChange(Global.acc)
+	
+	hairsprite.self_modulate = Global.hair_mod
+	bodysprite.self_modulate = Global.body_mod
+	accsprite.self_modulate = Global.acc_mod
+	eyessprite.self_modulate = Global.eyes_mod
+	clothessprite.self_modulate = Global.clothes_mod
+	
+	
 	attack = false
 	$sprite/AnimationPlayer.pause()
 
@@ -177,12 +185,7 @@ func _on_attack_timer_timeout():
 	attack = false
 
 func healthUpdate():
-	var healthbar = $healthbar
-	healthbar.value = health
-	if maxhealth == health:
-		healthbar.visible = false
-	else:
-		healthbar.visible = true
+	if maxhealth != health:
 		if !healingStart:
 			healthregin()
 	

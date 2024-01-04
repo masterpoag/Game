@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hairsprite = $sprite/Hair
 @onready var accsprite = $sprite/Acc
 const sprites = preload("res://entities/art/art.gd")
+var selected
 
 
 
@@ -73,3 +74,28 @@ func _on_eyes_pressed():
 	Global.eyes += 1
 	Global.eyes %= sprites.eyes_spritesheet.size()
 	eyeChange(Global.eyes)
+
+
+func _on_color_picker_color_changed(color):
+	match(selected):
+		0:
+			hairsprite.self_modulate = color
+			Global.hair_mod = color
+		1:
+			bodysprite.self_modulate = color
+			Global.body_mod = color
+		2:
+			accsprite.self_modulate = color
+			Global.acc_mod = color
+		3:
+			clothessprite.self_modulate = color
+			Global.clothes_mod = color
+		4:
+			eyessprite.self_modulate = color
+			Global.eyes_mod = color
+
+
+
+
+func _on_option_button_item_selected(index):
+	selected = index

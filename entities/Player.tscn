@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cuox1o5iwy1ms"]
+[gd_scene load_steps=25 format=3 uid="uid://cuox1o5iwy1ms"]
 
 [ext_resource type="Script" path="res://entities/scripts/player.gd" id="1_4gp3x"]
 [ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_bvyke"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d3l76dg6w8b5c" path="res://entities/art/acc/beard.png" id="6_5jdru"]
 [ext_resource type="Texture2D" uid="uid://dvkteobcqucd" path="res://entities/art/shadow.png" id="7_mxq67"]
 [ext_resource type="Script" path="res://entities/Health.gd" id="9_63g6m"]
+[ext_resource type="Script" path="res://scenes/scripts/CanvasLayer.gd" id="10_e760t"]
+[ext_resource type="PackedScene" uid="uid://xis4df8vo7uh" path="res://GUI/interface.tscn" id="11_xiqde"]
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001
@@ -1102,16 +1104,6 @@ limit_smoothed = true
 wait_time = 0.5
 autostart = true
 
-[node name="healthbar" type="ProgressBar" parent="."]
-modulate = Color(1, 0, 0, 1)
-offset_left = -7.0
-offset_top = -3.0
-offset_right = 123.0
-offset_bottom = 24.0
-scale = Vector2(0.1, 0.1)
-show_percentage = false
-metadata/_edit_use_anchors_ = true
-
 [node name="combatTimer" type="Timer" parent="."]
 wait_time = 20.0
 
@@ -1141,8 +1133,26 @@ wait_time = 0.5
 [node name="Node" type="Node" parent="."]
 script = ExtResource("9_63g6m")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
+follow_viewport_scale = 4.0
+script = ExtResource("10_e760t")
+
+[node name="Interface" parent="CanvasLayer" instance=ExtResource("11_xiqde")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 553.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.3, 0.3)
+
 [connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="combatTimer" to="." method="_on_combat_timer_timeout"]
 [connection signal="timeout" from="outOfCombatHeal" to="." method="_on_out_of_combat_heal_timeout"]
 [connection signal="body_entered" from="Weapon" to="." method="_on_weapon_body_entered"]
 [connection signal="timeout" from="invframes" to="." method="_on_invframes_timeout"]
+[connection signal="exp_change" from="CanvasLayer/Interface" to="CanvasLayer/Interface" method="_on_exp_change"]
+[connection signal="max_exp_change" from="CanvasLayer/Interface" to="CanvasLayer/Interface" method="_on_max_exp_change"]

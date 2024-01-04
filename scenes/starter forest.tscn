@@ -1,31 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvwhec7wpmi1e"]
+[gd_scene load_steps=5 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="Script" path="res://scenes/slimeSpawner.gd" id="1_ijnuc"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="2_trlyf"]
 [ext_resource type="PackedScene" uid="uid://ne6w5hm2g26a" path="res://entities/slime.tscn" id="3_qrel1"]
-[ext_resource type="PackedScene" uid="uid://xis4df8vo7uh" path="res://GUI/interface.tscn" id="5_ctdiq"]
 
 [node name="starter forest" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_trlyf")]
 position = Vector2(169, 63)
-
-[node name="Camera2D" parent="Player" index="2"]
-visible = true
-
-[node name="Interface" parent="Player/Camera2D" index="0" instance=ExtResource("5_ctdiq")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = -165.0
-offset_top = -90.0
-offset_right = 388.0
-offset_bottom = -90.0
-grow_horizontal = 1
-grow_vertical = 1
-scale = Vector2(0.3, 0.3)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -48,11 +32,3 @@ script = ExtResource("1_ijnuc")
 [node name="Slime" parent="slimespawner" groups=["Enemy"] instance=ExtResource("3_qrel1")]
 z_index = 1
 position = Vector2(237, 26)
-
-[connection signal="exp_change" from="Player" to="Player/Camera2D/Interface" method="_on_player_exp_change"]
-[connection signal="health_changed" from="Player" to="Player/Camera2D/Interface" method="_on_player_health_changed"]
-[connection signal="max_health_changed" from="Player" to="Player/Camera2D/Interface" method="_on_player_max_health_changed"]
-[connection signal="exp_change" from="Player/Camera2D/Interface" to="Player/Camera2D/Interface" method="_on_exp_change"]
-[connection signal="max_exp_change" from="Player/Camera2D/Interface" to="Player/Camera2D/Interface" method="_on_max_exp_change"]
-
-[editable path="Player"]
