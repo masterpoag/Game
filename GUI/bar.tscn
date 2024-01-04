@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbk2exn6r7804"]
+[gd_scene load_steps=5 format=3 uid="uid://cbk2exn6r7804"]
 
 [ext_resource type="Texture2D" uid="uid://dojxepvfftip3" path="res://GUI/assets/GUI/label_HP_bg.png" id="1_0sp4i"]
 [ext_resource type="FontFile" uid="uid://dad7lqam4k1rw" path="res://GUI/Comfortaa-Bold.ttf" id="3_2pp8d"]
 [ext_resource type="Texture2D" uid="uid://bdse68qwpu1br" path="res://GUI/assets/GUI/lifebar_bg.png" id="4_6ade0"]
-[ext_resource type="Script" path="res://GUI/Scripts/healthbar.gd" id="5_wy5ut"]
 [ext_resource type="Texture2D" uid="uid://skeythxncfur" path="res://GUI/assets/GUI/lifebar_fill.png" id="5_x71wy"]
 
 [node name="Bar" type="HBoxContainer"]
@@ -55,4 +54,3 @@ layout_mode = 2
 value = 100.0
 texture_under = ExtResource("4_6ade0")
 texture_progress = ExtResource("5_x71wy")
-script = ExtResource("5_wy5ut")

@@ -16,8 +16,6 @@ script = ExtResource("1_80bqf")
 
 [node name="HP" parent="." instance=ExtResource("1_icbkr")]
 layout_mode = 0
-
-[node name="Label" parent="HP/NinePatchRect" index="0"]
 script = ExtResource("3_5ychv")
 
 [node name="XP" parent="." instance=ExtResource("2_ieqo2")]
@@ -27,8 +25,11 @@ offset_top = 56.0
 offset_right = 503.0
 offset_bottom = 109.0
 
-[connection signal="health_changed" from="." to="HP/TextureProgressBar" method="_on_interface_health_changed"]
-[connection signal="max_health_changed" from="." to="HP/NinePatchRect/Label2" method="_on_interface_max_health_changed"]
+[connection signal="exp_change" from="." to="XP" method="_on_interface_exp_change"]
+[connection signal="health_changed" from="." to="HP" method="_on_interface_health_changed"]
+[connection signal="max_exp_change" from="." to="XP" method="_on_interface_max_exp_change"]
+[connection signal="max_exp_change" from="." to="XP/bar" method="_on_interface_max_exp_change"]
+[connection signal="max_health_changed" from="." to="HP" method="_on_interface_max_health_changed"]
 
 [editable path="HP"]
 [editable path="XP"]

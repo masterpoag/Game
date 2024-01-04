@@ -12,6 +12,21 @@ y_sort_enabled = true
 [node name="Player" parent="." instance=ExtResource("2_trlyf")]
 position = Vector2(169, 63)
 
+[node name="Camera2D" parent="Player" index="2"]
+visible = true
+
+[node name="Interface" parent="Player/Camera2D" index="0" instance=ExtResource("5_ctdiq")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -165.0
+offset_top = -90.0
+offset_right = 388.0
+offset_bottom = -90.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.3, 0.3)
+
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("2_1qk68")
@@ -34,11 +49,10 @@ script = ExtResource("1_ijnuc")
 z_index = 1
 position = Vector2(237, 26)
 
-[node name="Interface" parent="." instance=ExtResource("5_ctdiq")]
-scale = Vector2(0.3, 0.3)
-
-[connection signal="exp_change" from="Player" to="Interface" method="_on_player_exp_change"]
-[connection signal="health_changed" from="Player" to="Interface" method="_on_player_health_changed"]
-[connection signal="max_health_changed" from="Player" to="Interface" method="_on_player_max_health_changed"]
+[connection signal="exp_change" from="Player" to="Player/Camera2D/Interface" method="_on_player_exp_change"]
+[connection signal="health_changed" from="Player" to="Player/Camera2D/Interface" method="_on_player_health_changed"]
+[connection signal="max_health_changed" from="Player" to="Player/Camera2D/Interface" method="_on_player_max_health_changed"]
+[connection signal="exp_change" from="Player/Camera2D/Interface" to="Player/Camera2D/Interface" method="_on_exp_change"]
+[connection signal="max_exp_change" from="Player/Camera2D/Interface" to="Player/Camera2D/Interface" method="_on_max_exp_change"]
 
 [editable path="Player"]

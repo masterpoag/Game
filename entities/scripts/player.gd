@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal health_changed(value, displacement)
 signal exp_change(value)
 signal max_health_changed(value)
+signal levelthreshold(value)
 
 
 @onready var bodysprite = $sprite/Body
@@ -163,7 +164,6 @@ func player():
 func enemy_attack(hit):
 	if damageable:
 		damageable = false
-		print("you took damage")
 		health_changed.emit(health-hit,-hit)
 		health -= hit
 		$combatTimer.start()
@@ -216,7 +216,6 @@ func _on_out_of_combat_heal_timeout():
 func _on_weapon_body_entered(body):
 	
 	if body.is_in_group("Enemy"):
-		print("hit")
 		body.hit(damage)
 
 

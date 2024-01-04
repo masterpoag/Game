@@ -114,10 +114,8 @@ func healthUpdate():
 var globalbody
  
 func _on_hurtbox_body_entered(body):
-	print(body.get_groups())
 	if body.is_in_group("Player"):
 		globalbody = body
-		print("hit!")
 		if $invFrames.is_stopped():
 			body.enemy_attack(damage)
 		inCooldown = true
