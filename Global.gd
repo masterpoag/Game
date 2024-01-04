@@ -1,6 +1,8 @@
 extends Node
 var playerAttacting = false
 
+var firstvisit = true
+
 var body = 1
 var clothes = 1
 var acc = 1

@@ -33,6 +33,10 @@ var last = 0
 
 
 func _ready():
+	print(get_tree().get_current_scene().get_name())
+	if !Global.firstvisit && get_tree().get_current_scene().get_name() == "city":
+		position.x= -38
+		position.y= 47
 	hairChange(Global.hair)
 	bodyChange(Global.body)
 	eyeChange(Global.eyes)
