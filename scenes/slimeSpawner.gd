@@ -3,7 +3,7 @@ extends Node2D
 var slime = load("res://entities/slime.tscn")
 var nodes : Array = []
 var slimeInstance
-func _process(delta):
+func _process(_delta):
 	if self.get_child_count() == 0:
 		for i in range(randi_range(1,5)):
 			slimeInstance = slime.instantiate()

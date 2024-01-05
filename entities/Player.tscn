@@ -1157,5 +1157,4 @@ volume_db = -20.0
 [connection signal="timeout" from="outOfCombatHeal" to="." method="_on_out_of_combat_heal_timeout"]
 [connection signal="body_entered" from="Weapon" to="." method="_on_weapon_body_entered"]
 [connection signal="timeout" from="invframes" to="." method="_on_invframes_timeout"]
-[connection signal="exp_change" from="CanvasLayer/Interface" to="CanvasLayer/Interface" method="_on_exp_change"]
 [connection signal="max_exp_change" from="CanvasLayer/Interface" to="CanvasLayer/Interface" method="_on_max_exp_change"]

@@ -21,7 +21,7 @@ func _ready():
 	add_to_group("Enemy")
 	self.y_sort_enabled = true
 
-func _process(delta):
+func _process(_delta):
 	if !$invFrames.is_stopped():
 		invable+= 1
 		if invable % 2 == 0:
@@ -39,7 +39,7 @@ func _on_dealthtimer_timeout():
 
 # end testing
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	healthUpdate()
 	if health <= 0:
 		$AnimatedSprite2D.play("dealth")
@@ -74,7 +74,7 @@ func _on_detection_body_entered(body):
 	enemyDetected = true
 
 
-func _on_detection_body_exited(body):
+func _on_detection_body_exited(_body):
 	enemy = null
 	enemyDetected = false
 

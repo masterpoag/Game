@@ -25,7 +25,7 @@ var load = load("res://prefabs/damage_indicator.tscn")
 var damage
 var pos
 
-func showDamage(tree,damage,pos):
+func showDamage(_tree,damage,pos):
 	self.damage = damage
 	self.pos = pos
 	var Instance = load.instantiate()

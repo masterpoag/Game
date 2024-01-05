@@ -113,7 +113,7 @@ func bodyChange(factor):
 	bodysprite.texture = sprites.body_spritesheet[factor]
 	#bodysprite.Modulate(randi_range(0,255),randi_range(0,255),randi_range(0,255))
 
-func _process(delta):
+func _process(_delta):
 	if playerAlive:
 		attackAction()
 	if !$invframes.is_stopped():
@@ -138,7 +138,7 @@ func _physics_process(delta):
 		print("you Died")
 	
 
-func playerMovement(delta):
+func playerMovement(_delta):
 	if !attack:
 		if Input.is_action_pressed("right"):
 
