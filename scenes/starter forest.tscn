@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvwhec7wpmi1e"]
+[gd_scene load_steps=9 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="2_trlyf"]
 [ext_resource type="Script" path="res://scenes/scripts/back to town warp.gd" id="5_oyv4v"]
 [ext_resource type="AudioStream" uid="uid://me1cjf6w8072" path="res://Music/025_A_New_Town.mp3" id="5_vqv2u"]
 [ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="6_qsbs2"]
+[ext_resource type="PackedScene" uid="uid://djvsf38r1to17" path="res://prefabs/pausescreen.tscn" id="7_s8ipp"]
 [ext_resource type="Script" path="res://scenes/scripts/AudioStreamPlayer2D.gd" id="8_u3mps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtp7u"]
@@ -52,5 +53,16 @@ stream = ExtResource("5_vqv2u")
 volume_db = -20.0
 script = ExtResource("8_u3mps")
 
+[node name="Pause" parent="." instance=ExtResource("7_s8ipp")]
+process_mode = 3
+
+[node name="overlay" parent="Pause/CanvasLayer" index="0"]
+custom_minimum_size = Vector2(0, 19.21)
+
+[node name="CenterContainer" parent="Pause/CanvasLayer/overlay" index="0"]
+scale = Vector2(2, 2)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
+
+[editable path="Pause"]
