@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brx7vq1ebba2s"
+path="res://.godot/imported/040_Happy_Thought_3 title.mp3-d8d61093b69039d3f624b02926d8f3a5.mp3str"
+
+[deps]
+
+source_file="res://Music/040_Happy_Thought_3 title.mp3"
+dest_files=["res://.godot/imported/040_Happy_Thought_3 title.mp3-d8d61093b69039d3f624b02926d8f3a5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

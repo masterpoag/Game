@@ -30,15 +30,21 @@ func gain_experience(amount):
 	emit_signal("exp_change", growth_data)
 
 func level_up():
+	
 	level += 1
 	experience_required = get_required_experience(level + 1)
 	var stats = ['max_hp', 'strength']
 	var random_stat = stats[randi() % stats.size()]
 	set(random_stat, get(random_stat) + randi() % 10)
 	if strength > 1:
-		damage *= 1+strength/100
-	print(damage)
-	maxhealth = max_hp
+		damage += round(strength/(2*level))
+		print(damage)
+	if random_stat == stats[0]:
+		maxhealth = max_hp
+		max_health_changed.emit(maxhealth)
+	if health != maxhealth:
+		health = maxhealth
+		health_changed.emit(maxhealth,maxhealth-health)
 
 @onready var bodysprite = $sprite/Body
 @onready var clothessprite = $sprite/Clothes

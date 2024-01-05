@@ -32,7 +32,7 @@ func _process(delta):
 
 
 func _on_dealthtimer_timeout():
-	Global.EXPToAdd += 5
+	Global.EXPToAdd += 5000
 	self.queue_free()
 	
 # testing 
