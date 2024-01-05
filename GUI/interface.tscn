@@ -28,7 +28,6 @@ offset_bottom = 109.0
 [connection signal="exp_change" from="." to="XP" method="_on_interface_exp_change"]
 [connection signal="health_changed" from="." to="HP" method="_on_interface_health_changed"]
 [connection signal="max_exp_change" from="." to="XP" method="_on_interface_max_exp_change"]
-[connection signal="max_exp_change" from="." to="XP/bar" method="_on_interface_max_exp_change"]
 [connection signal="max_health_changed" from="." to="HP" method="_on_interface_max_health_changed"]
 
 [editable path="HP"]

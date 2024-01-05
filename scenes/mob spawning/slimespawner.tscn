@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://mnbpwnisl58g"]
+
+[ext_resource type="Script" path="res://scenes/slimeSpawner.gd" id="1_83tjq"]
+[ext_resource type="PackedScene" uid="uid://ne6w5hm2g26a" path="res://entities/slime.tscn" id="2_7dy08"]
+
+[node name="slimespawner" type="Area2D"]
+script = ExtResource("1_83tjq")
+
+[node name="Slime" parent="." groups=["Enemy"] instance=ExtResource("2_7dy08")]
+position = Vector2(237, 26)

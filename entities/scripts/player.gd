@@ -38,7 +38,6 @@ func level_up():
 	set(random_stat, get(random_stat) + randi() % 10)
 	if strength > 1:
 		damage += round(strength/(2*level))
-		print(damage)
 	if random_stat == stats[0]:
 		maxhealth = max_hp
 		max_health_changed.emit(maxhealth)
@@ -220,7 +219,6 @@ func player():
 	pass
 
 func enemy_attack(hit):
-	print(damageable)
 	if damageable:
 		damageable = false
 		health_changed.emit(health-hit,-hit)

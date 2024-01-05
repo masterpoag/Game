@@ -85,7 +85,6 @@ func hit(damage):
 		damageable = false
 		$invFrames.start()
 		health -= damage
-		print("slime health is at "+str(health))
 		if health <= 0:
 			health = 0
 			$dealthtimer.start() 
