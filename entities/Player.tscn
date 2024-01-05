@@ -1150,6 +1150,7 @@ volume_db = -20.0
 
 [connection signal="exp_change" from="." to="CanvasLayer/Interface" method="_on_player_exp_change"]
 [connection signal="health_changed" from="." to="CanvasLayer/Interface" method="_on_player_health_changed"]
+[connection signal="levelup" from="." to="CanvasLayer/Interface" method="_on_player_levelup"]
 [connection signal="max_health_changed" from="." to="CanvasLayer/Interface" method="_on_player_max_health_changed"]
 [connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="combatTimer" to="." method="_on_combat_timer_timeout"]

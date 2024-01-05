@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal health_changed(value, displacement)
 signal exp_change(value)
 signal max_health_changed(value)
+signal levelup(level)
 
 # CHARACTER STATS
 var max_hp = 100
@@ -32,6 +33,7 @@ func gain_experience(amount):
 func level_up():
 	
 	level += 1
+	levelup.emit(level)
 	experience_required = get_required_experience(level + 1)
 	var stats = ['max_hp', 'strength']
 	var random_stat = stats[randi() % stats.size()]
