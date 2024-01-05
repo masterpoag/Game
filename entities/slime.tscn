@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://ne6w5hm2g26a"]
+[gd_scene load_steps=23 format=3 uid="uid://ne6w5hm2g26a"]
 
 [ext_resource type="Script" path="res://entities/scripts/slime.gd" id="1_ueq5m"]
 [ext_resource type="Texture2D" uid="uid://cq26sv4e6oflh" path="res://art/sprites/characters/slime.png" id="2_p3r8k"]
+[ext_resource type="AudioStream" uid="uid://gmfxktx8akd6" path="res://Music/slimejump-6913.mp3" id="3_m6dro"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfaks"]
 atlas = ExtResource("2_p3r8k")
@@ -143,7 +144,7 @@ script = ExtResource("1_ueq5m")
 y_sort_enabled = true
 position = Vector2(0, 5)
 sprite_frames = SubResource("SpriteFrames_dtaut")
-animation = &"dealth"
+animation = &"jump"
 offset = Vector2(0, -7)
 
 [node name="detection" type="Area2D" parent="."]
@@ -187,6 +188,11 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 shape = SubResource("CircleShape2D_n2fls")
 
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m6dro")
+volume_db = -20.0
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]

@@ -12,9 +12,9 @@ func _on_player_health_changed(value, displacement):
 func _on_player_max_health_changed(value):
 	max_health_changed.emit(value)
 
-func _on_max_exp_change(value):
-	max_exp_change.emit(value)
-
-
-func _on_exp_change(value):
+func _on_player_exp_change(value):
 	exp_change.emit(value)
+
+
+func _on_player_levelthreshold(value):
+	max_exp_change.emit(value)

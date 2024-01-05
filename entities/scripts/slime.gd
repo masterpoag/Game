@@ -13,6 +13,9 @@ var startedTimer = false
 var damageable = true
 var invable = 0
 
+var following = false
+
+
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	add_to_group("Enemy")
@@ -48,6 +51,7 @@ func _physics_process(delta):
 		
 		
 		if enemyDetected:
+			following = true
 			if $invFrames.is_stopped():
 				velocity = (position.direction_to(enemy.position) * speed)*abs((self.position-enemy.position)/90)
 			else:
@@ -58,6 +62,7 @@ func _physics_process(delta):
 			else:
 				$AnimatedSprite2D.flip_h = false
 		else:
+			following = false
 			$AnimatedSprite2D.play("idle")
 			velocity *= 0
 	move_and_slide()
@@ -125,3 +130,14 @@ func _on_hurtbox_body_entered(body):
 func _on_hurtbox_body_exited(body):
 	if body.is_in_group("Player"):
 		globalbody = null
+
+
+
+
+
+
+func _on_animated_sprite_2d_animation_looped():
+	if following:
+		$JumpSound.play()
+	else:
+		$JumpSound.stop()

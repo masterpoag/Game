@@ -158,6 +158,7 @@ func attackAction():
 		Global.playerAttacting = true
 		attack = true
 		var anim = $sprite/AnimationPlayer
+		$Swingsound.play()
 		if current_dir == "right":
 			anim.play("right attack")
 			$attackTimer.start()
@@ -175,9 +176,11 @@ func player():
 	pass
 
 func enemy_attack(hit):
+	print(damageable)
 	if damageable:
 		damageable = false
 		health_changed.emit(health-hit,-hit)
+		$Hitsound.play()
 		health -= hit
 		$combatTimer.start()
 		$invframes.start()

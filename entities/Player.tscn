@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cuox1o5iwy1ms"]
+[gd_scene load_steps=27 format=3 uid="uid://cuox1o5iwy1ms"]
 
 [ext_resource type="Script" path="res://entities/scripts/player.gd" id="1_4gp3x"]
 [ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_bvyke"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://entities/Health.gd" id="9_63g6m"]
 [ext_resource type="Script" path="res://scenes/scripts/CanvasLayer.gd" id="10_e760t"]
 [ext_resource type="PackedScene" uid="uid://xis4df8vo7uh" path="res://GUI/interface.tscn" id="11_xiqde"]
+[ext_resource type="AudioStream" uid="uid://c8paqsx6vfmor" path="res://Music/ough-47202.mp3" id="12_68jl2"]
+[ext_resource type="AudioStream" uid="uid://cngomx15i3x1u" path="res://Music/swing.mp3" id="13_gqijv"]
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001
@@ -1139,6 +1141,18 @@ grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.3, 0.3)
 
+[node name="Hitsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_68jl2")
+volume_db = -20.0
+
+[node name="Swingsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_gqijv")
+volume_db = -20.0
+
+[connection signal="exp_change" from="." to="CanvasLayer/Interface" method="_on_player_exp_change"]
+[connection signal="health_changed" from="." to="CanvasLayer/Interface" method="_on_player_health_changed"]
+[connection signal="levelthreshold" from="." to="CanvasLayer/Interface" method="_on_player_levelthreshold"]
+[connection signal="max_health_changed" from="." to="CanvasLayer/Interface" method="_on_player_max_health_changed"]
 [connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="combatTimer" to="." method="_on_combat_timer_timeout"]
 [connection signal="timeout" from="outOfCombatHeal" to="." method="_on_out_of_combat_heal_timeout"]
