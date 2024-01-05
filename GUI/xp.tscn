@@ -38,7 +38,7 @@ offset_bottom = 13.5
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_7vfxc")
-text = "0/25
+text = "0/11
 "
 horizontal_alignment = 1
 
@@ -60,7 +60,6 @@ text = "EXP
 [node name="bar" type="TextureProgressBar" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
-max_value = 25.0
-value = 5.0
+max_value = 11.0
 texture_under = ExtResource("3_q6fut")
 texture_progress = ExtResource("4_eflep")

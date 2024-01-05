@@ -18,6 +18,6 @@ func _ready():
 			self.limit_left = -48
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	position.x = Global.posx
 	position.y = Global.posy

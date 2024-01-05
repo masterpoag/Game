@@ -3,8 +3,42 @@ extends CharacterBody2D
 signal health_changed(value, displacement)
 signal exp_change(value)
 signal max_health_changed(value)
-signal levelthreshold(value)
 
+# CHARACTER STATS
+var max_hp = 100
+var strength = 1
+
+# LEVELING SYSTEM
+var level = 1
+var experience_total = 0
+var experience = 0
+
+var experience_required = get_required_experience(level + 1)
+func get_required_experience(level):
+	return round(pow(level, 1.8) + level * 4)
+
+func gain_experience(amount):
+	experience_total += amount
+	experience+= amount
+	var growth_data = []
+	while experience >= experience_required:
+		experience -= experience_required
+		growth_data.append([experience_required, experience_required])
+		level_up()
+		
+	growth_data.append([experience, get_required_experience(level + 1)])
+	emit_signal("exp_change", growth_data)
+
+func level_up():
+	level += 1
+	experience_required = get_required_experience(level + 1)
+	var stats = ['max_hp', 'strength']
+	var random_stat = stats[randi() % stats.size()]
+	set(random_stat, get(random_stat) + randi() % 10)
+	if strength > 1:
+		damage *= 1+strength/100
+	print(damage)
+	maxhealth = max_hp
 
 @onready var bodysprite = $sprite/Body
 @onready var clothessprite = $sprite/Clothes
@@ -33,6 +67,7 @@ var last = 0
 
 
 func _ready():
+	
 	if !Global.firstvisit && get_tree().get_current_scene().get_name() == "city":
 		position.x= -38
 		position.y= 47
@@ -80,6 +115,9 @@ func _process(delta):
 			self.modulate = "ffffffff"
 		else:
 			self.modulate = "ffffff00"
+	if Global.EXPToAdd > 0:
+		gain_experience(Global.EXPToAdd)
+		Global.EXPToAdd = 0
 
 func _physics_process(delta):
 	if $attackTimer.time_left <= 0:

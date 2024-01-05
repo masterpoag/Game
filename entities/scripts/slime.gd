@@ -32,6 +32,7 @@ func _process(delta):
 
 
 func _on_dealthtimer_timeout():
+	Global.EXPToAdd += 5
 	self.queue_free()
 	
 # testing 
@@ -130,11 +131,6 @@ func _on_hurtbox_body_entered(body):
 func _on_hurtbox_body_exited(body):
 	if body.is_in_group("Player"):
 		globalbody = null
-
-
-
-
-
 
 func _on_animated_sprite_2d_animation_looped():
 	if following:
