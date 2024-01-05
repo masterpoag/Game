@@ -14,8 +14,14 @@ offset_bottom = 108.0
 scale = Vector2(0.8, 0.8)
 script = ExtResource("5_axxpc")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-custom_minimum_size = Vector2(100, 0)
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_xs67v")
@@ -24,42 +30,48 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Label" type="Label" parent="NinePatchRect"]
+[node name="Label2" type="Label" parent="CenterContainer/HBoxContainer/NinePatchRect"]
 texture_filter = 5
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -9.5
-offset_bottom = 13.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_7vfxc")
-text = "0/11
-"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="NinePatchRect"]
-texture_filter = 5
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+offset_left = -24.25
 offset_top = -12.5
-offset_right = 58.0
+offset_right = 21.75
 offset_bottom = 17.5
+grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_7vfxc")
 theme_override_font_sizes/font_size = 23
 text = "EXP
 "
+horizontal_alignment = 1
 
-[node name="bar" type="TextureProgressBar" parent="."]
+[node name="bar" type="TextureProgressBar" parent="CenterContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 max_value = 11.0
 texture_under = ExtResource("3_q6fut")
 texture_progress = ExtResource("4_eflep")
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer/bar"]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -8.5
+offset_right = 15.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_7vfxc")
+text = "0/11
+"
+horizontal_alignment = 1
