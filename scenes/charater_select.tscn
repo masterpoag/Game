@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cvfxil5wxawv"]
+[gd_scene load_steps=23 format=3 uid="uid://cvfxil5wxawv"]
 
 [ext_resource type="Script" path="res://scenes/scripts/startgame.gd" id="1_avssh"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="1_eu5ge"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvkteobcqucd" path="res://entities/art/shadow.png" id="8_e71rm"]
 [ext_resource type="FontFile" uid="uid://dad7lqam4k1rw" path="res://GUI/Comfortaa-Bold.ttf" id="11_euwdh"]
 [ext_resource type="FontFile" uid="uid://40r307w0wekr" path="res://GUI/assets/font/Comfortaa-Bold.ttf" id="11_surv5"]
+[ext_resource type="AudioStream" uid="uid://psmmd5pymjre" path="res://Music/sb_indreams.mp3" id="12_6xxqm"]
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001
@@ -1216,6 +1217,11 @@ speed_scale = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_ajxvw")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_6xxqm")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2/hair" to="CharacterBody2D" method="_on_hair_pressed"]

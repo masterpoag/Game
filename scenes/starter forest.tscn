@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvwhec7wpmi1e"]
+[gd_scene load_steps=9 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="Script" path="res://scenes/slimeSpawner.gd" id="1_ijnuc"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ne6w5hm2g26a" path="res://entities/slime.tscn" id="3_qrel1"]
 [ext_resource type="Script" path="res://scenes/scripts/back to town warp.gd" id="5_oyv4v"]
 [ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="6_qsbs2"]
+[ext_resource type="AudioStream" uid="uid://bfkpp68vo4vyu" path="res://Music/ForestWalk-320bit.mp3" id="7_1iucl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtp7u"]
 size = Vector2(33.625, 34)
@@ -45,5 +46,10 @@ position = Vector2(562.188, 257)
 shape = SubResource("RectangleShape2D_dtp7u")
 
 [node name="Player camera" parent="." instance=ExtResource("6_qsbs2")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1iucl")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
