@@ -82,6 +82,7 @@ func _on_detection_body_exited(body):
 
 func hit(damage):
 	if damageable:
+		Global.showDamage(get_tree().current_scene,damage,[position.x,position.y])
 		damageable = false
 		$invFrames.start()
 		health -= damage
@@ -136,3 +137,4 @@ func _on_animated_sprite_2d_animation_looped():
 		$JumpSound.play()
 	else:
 		$JumpSound.stop()
+

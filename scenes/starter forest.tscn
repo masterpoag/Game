@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvwhec7wpmi1e"]
+[gd_scene load_steps=10 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="2_trlyf"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://me1cjf6w8072" path="res://Music/025_A_New_Town.mp3" id="5_vqv2u"]
 [ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="6_qsbs2"]
 [ext_resource type="PackedScene" uid="uid://djvsf38r1to17" path="res://prefabs/pausescreen.tscn" id="7_s8ipp"]
+[ext_resource type="PackedScene" uid="uid://mnbpwnisl58g" path="res://scenes/mob spawning/slimespawner.tscn" id="8_raqhc"]
 [ext_resource type="Script" path="res://scenes/scripts/AudioStreamPlayer2D.gd" id="8_u3mps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtp7u"]
@@ -61,6 +62,8 @@ custom_minimum_size = Vector2(0, 19.21)
 
 [node name="CenterContainer" parent="Pause/CanvasLayer/overlay" index="0"]
 scale = Vector2(2, 2)
+
+[node name="slimespawner" parent="." instance=ExtResource("8_raqhc")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

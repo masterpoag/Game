@@ -20,3 +20,13 @@ var posx
 var posy
 
 var EXPToAdd = 0
+
+var load = load("res://prefabs/damage_indicator.tscn")
+var damage
+var pos
+
+func showDamage(tree,damage,pos):
+	self.damage = damage
+	self.pos = pos
+	var Instance = load.instantiate()
+	
