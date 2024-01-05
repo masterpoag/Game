@@ -16,6 +16,7 @@ var invable = 0
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	add_to_group("Enemy")
+	self.y_sort_enabled = true
 
 func _process(delta):
 	if !$invFrames.is_stopped():

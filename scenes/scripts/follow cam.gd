@@ -6,10 +6,10 @@ func _ready():
 	match get_tree().get_current_scene().get_name():
 		"city":
 			print("city")
-			#self.limit_top = 10000000
-			#self.limit_bottom = -10000000
-			#self.limit_right = 10000000
-			#self.limit_left = -10000000
+			self.limit_bottom = 192 
+			self.limit_right = 448
+			self.limit_top = -112
+			self.limit_left = -48
 		"starter forest":
 			print("starter")
 			self.limit_top = -48

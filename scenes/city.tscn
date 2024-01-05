@@ -51,5 +51,9 @@ position = Vector2(-65, 41.75)
 shape = SubResource("RectangleShape2D_kyef1")
 
 [node name="Player camera" parent="." instance=ExtResource("4_klrxs")]
+limit_left = -48
+limit_top = -112
+limit_right = 448
+limit_bottom = 192
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

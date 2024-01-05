@@ -20,7 +20,6 @@ position = Vector2(536, 264)
 script = ExtResource("1_ijnuc")
 
 [node name="Slime" parent="slimespawner" groups=["Enemy"] instance=ExtResource("3_qrel1")]
-z_index = 1
 position = Vector2(237, 26)
 
 [node name="TileMap" type="TileMap" parent="."]
