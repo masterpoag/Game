@@ -310,5 +310,8 @@ func _on_invframes_timeout():
 	invable	= 0
 	self.modulate = "FFFFFFFF"
 
+func collect(item):
+	inv.insert(item)
+
 
 #end of script

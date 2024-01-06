@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=2 format=3 uid="uid://cribl0fpcp658"]
+
+[ext_resource type="Script" path="res://inventory system/scripts/inv.gd" id="3_5cbs0"]
+
+[resource]
+script = ExtResource("3_5cbs0")
+slots = Array[Resource("res://inventory system/scripts/stacking.gd")]([])
