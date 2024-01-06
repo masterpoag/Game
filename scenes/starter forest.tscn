@@ -17,7 +17,7 @@ y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_trlyf")]
 z_index = 2
-position = Vector2(184, 312)
+position = Vector2(200, 264)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
