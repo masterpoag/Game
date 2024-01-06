@@ -1120,6 +1120,7 @@ position = Vector2(-9, -5)
 rotation = -0.69115
 scale = Vector2(2.5, 1.9)
 shape = SubResource("CapsuleShape2D_slabi")
+disabled = true
 
 [node name="invframes" type="Timer" parent="."]
 wait_time = 0.5
