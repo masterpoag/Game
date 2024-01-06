@@ -16,4 +16,4 @@ func insert(item: InvItem):
 		if !emptyslots.is_empty():
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
-		update.emit()
+	update.emit()
