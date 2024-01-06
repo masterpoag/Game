@@ -15,6 +15,8 @@ var invable = 0
 
 var following = false
 
+var droppedItem = preload("res://inventory system/Items/stick.tres")
+
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
@@ -140,5 +142,3 @@ func _on_animated_sprite_2d_animation_looped():
 		$JumpSound.stop()
 
 
-
-var droppedItem = preload("res://inventory system/Items/stick.tres")
