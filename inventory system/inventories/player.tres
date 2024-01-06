@@ -1,14 +1,22 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=15 format=3 uid="uid://cribl0fpcp658"]
+[gd_resource type="Resource" script_class="Inv" load_steps=18 format=3 uid="uid://cribl0fpcp658"]
 
 [ext_resource type="Script" path="res://inventory system/scripts/stacking.gd" id="2_ffhwg"]
+[ext_resource type="Resource" uid="uid://dxjl4m1mjpxj0" path="res://inventory system/Items/apple.tres" id="2_rks1f"]
 [ext_resource type="Script" path="res://inventory system/scripts/inv.gd" id="3_5cbs0"]
+[ext_resource type="Script" path="res://inventory system/scripts/Inventory_items.gd" id="4_6fjwn"]
 
 [sub_resource type="Resource" id="Resource_4io4q"]
 script = ExtResource("2_ffhwg")
-amount = 0
+item = ExtResource("2_rks1f")
+amount = 50
+
+[sub_resource type="Resource" id="Resource_jn135"]
+script = ExtResource("4_6fjwn")
+name = ""
 
 [sub_resource type="Resource" id="Resource_bfx0j"]
 script = ExtResource("2_ffhwg")
+item = SubResource("Resource_jn135")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_48pcb"]

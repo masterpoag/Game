@@ -9,7 +9,7 @@ var state = false
 
 
 func _ready():
-	inv.update(update_slots) #TODO Koris i need your help figuring this out is super late ;-;
+	inv.update.connect(update_slots)
 	update_slots()
 	close()
 
@@ -25,6 +25,7 @@ func _process(delta):
 			open()
 
 func open():
+	update_slots()
 	visible = true
 	is_open = true
 	pause()
