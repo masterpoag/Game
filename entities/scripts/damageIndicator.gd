@@ -7,7 +7,7 @@ var SHIFT_DIRECTION = Vector2.ZERO
 @onready var label = $Label
 
 func _ready():
-	SHIFT_DIRECTION = Vector2(randfn(-1,1),randfn(-1,1))
+	SHIFT_DIRECTION = Vector2(randfn(-.1,.1),randfn(0,.2))
 	$Label.text = str(damage)
 
 func _process(delta):

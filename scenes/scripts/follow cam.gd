@@ -2,7 +2,7 @@ extends Camera2D
 
 
 func _ready():
-	self.zoom = Vector2(2,2) # for testing set back to 4x4 later
+	self.zoom = Vector2(4,4)
 	match get_tree().get_current_scene().get_name():
 		"city":
 			self.limit_bottom = 192 
