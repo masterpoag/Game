@@ -82,7 +82,7 @@ func _on_detection_body_exited(_body):
 
 func hit(damage):
 	if damageable:
-		damageind(damage)
+		Global.showDamage(get_tree().get_root(),damage,position)
 		damageable = false
 		$invFrames.start()
 		health -= damage
@@ -137,12 +137,3 @@ func _on_animated_sprite_2d_animation_looped():
 		$JumpSound.play()
 	else:
 		$JumpSound.stop()
-
-
-
-var indicator = load("res://prefabs/damage_indicator.tscn")
-func damageind(damage):
-	var Instance = indicator.instantiate()
-	Instance.damage = damage
-	Instance.global_position = Vector2(self.position.x,self.position.y)
-	get_tree().get_root().add_child(Instance)

@@ -23,3 +23,11 @@ var EXPToAdd = 0
 
 var damage
 var pos
+
+var indicator = preload("res://prefabs/damage_indicator.tscn")
+
+func showDamage(root,damage,pos):
+	var Instance = indicator.instantiate()
+	Instance.damage = damage
+	Instance.global_position = pos
+	root.add_child(Instance)
