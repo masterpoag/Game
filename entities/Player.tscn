@@ -1035,13 +1035,14 @@ inv = ExtResource("2_f7y3w")
 
 [node name="sprite" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -20)
+position = Vector2(0, -5)
 scale = Vector2(1.25371, 1)
 metadata/_edit_group_ = true
 
 [node name="Body" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
 texture = ExtResource("2_bvyke")
+offset = Vector2(0, -15)
 hframes = 8
 vframes = 49
 script = ExtResource("3_kc2ju")
@@ -1049,6 +1050,7 @@ script = ExtResource("3_kc2ju")
 [node name="Clothes" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
 texture = ExtResource("3_3vngx")
+offset = Vector2(0, -15)
 hframes = 80
 vframes = 49
 frame = 80
@@ -1057,6 +1059,7 @@ script = ExtResource("3_kc2ju")
 [node name="Eyes" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
 texture = ExtResource("4_tgmi4")
+offset = Vector2(0, -15)
 hframes = 112
 vframes = 49
 frame = 112
@@ -1065,6 +1068,7 @@ script = ExtResource("3_kc2ju")
 [node name="Hair" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
 texture = ExtResource("5_w206r")
+offset = Vector2(0, -15)
 hframes = 112
 vframes = 49
 frame = 112
@@ -1073,6 +1077,7 @@ script = ExtResource("3_kc2ju")
 [node name="Acc" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
 texture = ExtResource("6_5jdru")
+offset = Vector2(0, -15)
 hframes = 112
 vframes = 49
 frame = 112
@@ -1082,6 +1087,7 @@ script = ExtResource("3_kc2ju")
 y_sort_enabled = true
 position = Vector2(0, 12)
 texture = ExtResource("7_mxq67")
+offset = Vector2(0, -15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]
 speed_scale = 1.5
