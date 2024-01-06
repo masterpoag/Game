@@ -16,7 +16,8 @@ size = Vector2(33.625, 34)
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_trlyf")]
-position = Vector2(536, 264)
+z_index = 2
+position = Vector2(184, 312)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
