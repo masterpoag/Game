@@ -16,17 +16,10 @@ var acc_mod = Color(1, 1, 1, 1)
 var hair_mod = Color(1, 1, 1, 1)
 var eyes_mod = Color(1, 1, 1, 1)
 
-var posx
-var posy
+var posx = 0
+var posy = 0
 
 var EXPToAdd = 0
 
-var load = load("res://prefabs/damage_indicator.tscn")
 var damage
 var pos
-
-func showDamage(_tree,damage,pos):
-	self.damage = damage
-	self.pos = pos
-	var Instance = load.instantiate()
-	

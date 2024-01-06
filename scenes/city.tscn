@@ -53,6 +53,7 @@ position = Vector2(-65, 41.75)
 shape = SubResource("RectangleShape2D_kyef1")
 
 [node name="Player camera" parent="." instance=ExtResource("4_klrxs")]
+enabled = false
 limit_left = -48
 limit_top = -112
 limit_right = 448
