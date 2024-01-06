@@ -31,3 +31,13 @@ func showDamage(root,damage,pos):
 	Instance.damage = damage
 	Instance.global_position = pos
 	root.add_child(Instance)
+
+
+var itemDropped = preload("res://prefabs/Item resources/dropped_item.tscn")
+
+func spawnItemDrop(itemType,root,pos,scale):
+	var Instance = itemDropped.instantiate()
+	Instance.global_position = pos
+	Instance.size = scale
+	Instance.item = itemType
+	root.add_child(Instance)

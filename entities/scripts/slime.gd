@@ -33,6 +33,7 @@ func _process(_delta):
 
 func _on_dealthtimer_timeout():
 	Global.EXPToAdd += 5
+	Global.spawnItemDrop(droppedItem,get_tree().get_root(),global_position,Vector2(.5,.5))
 	self.queue_free()
 	
 # testing 
@@ -137,3 +138,7 @@ func _on_animated_sprite_2d_animation_looped():
 		$JumpSound.play()
 	else:
 		$JumpSound.stop()
+
+
+
+var droppedItem = preload("res://inventory system/Items/stick.tres")

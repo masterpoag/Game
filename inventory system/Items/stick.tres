@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c8dxk05mv7poe"]
 
 [ext_resource type="Script" path="res://inventory system/scripts/Inventory_items.gd" id="1_ilmql"]
-[ext_resource type="Texture2D" uid="uid://bjxehweojggr" path="res://inventory system/UI/stick-icon.png" id="2_pqx4b"]
+[ext_resource type="Texture2D" uid="uid://cgv78vb1ixg2a" path="res://inventory system/Tree Branch.png" id="2_6bef3"]
 
 [resource]
 script = ExtResource("1_ilmql")
 name = "stick"
-texture = ExtResource("2_pqx4b")
+texture = ExtResource("2_6bef3")

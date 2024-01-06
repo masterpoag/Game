@@ -5,6 +5,7 @@ signal health_changed(value, displacement)
 signal exp_change(value)
 signal max_health_changed(value)
 signal levelup(level)
+
 #----------------------------------------------------------------
 
 # CHARACTER STATS
@@ -312,6 +313,5 @@ func _on_invframes_timeout():
 
 func collect(item):
 	inv.insert(item)
-
 
 #end of script
