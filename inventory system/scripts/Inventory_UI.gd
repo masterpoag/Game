@@ -9,7 +9,7 @@ var state = false
 
 
 func _ready():
-	inv.insert.collect(update_slots)
+	#inv.update.collect(update_slots) TODO Koris i need your help figuring this out is super late ;-;
 	update_slots()
 	close()
 
