@@ -1091,6 +1091,8 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_n0lqu")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
 
 [connection signal="body_entered" from="chatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]

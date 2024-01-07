@@ -71,7 +71,19 @@ scale = Vector2(2, 2)
 [node name="slimespawner" parent="." instance=ExtResource("8_raqhc")]
 
 [node name="NPC" parent="." instance=ExtResource("9_l0gi7")]
-position = Vector2(200, 264)
+z_index = 2
+y_sort_enabled = true
+position = Vector2(56, 168)
+
+[node name="NPC2" parent="." instance=ExtResource("9_l0gi7")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(296, -8)
+
+[node name="NPC3" parent="." instance=ExtResource("9_l0gi7")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(376, 312)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var lastPos
 const speed = 30
 var currentState = 2
 var isRoaming = true
@@ -44,7 +44,10 @@ func _process(delta):
 			new_DIR:
 				direction = directions[randi() % directions.size()]
 			MOVE:
-				move()
+				move(delta)
+				
+	if position == lastPos and currentState != IDLE:
+		_on_timer_timeout()
 
 
 func _ready():
@@ -54,11 +57,11 @@ func _ready():
 	bodyChange(randi_range(0,sprites.body_spritesheet.size()-1))
 	eyeChange(randi_range(0,sprites.eyes_spritesheet.size()-1))
 	clothesChange(randi_range(0,sprites.clothes_spritesheet.size()-1))
-	accChange(randi_range(0,sprites.acc_spritesheet.size()-1))
+	accChange(0)
 
-func move():
+func move(delta):
 	if !is_chatting:
-		velocity += direction * (speed*.01)
+		position += direction * speed * delta
 		move_and_slide()
 
 
