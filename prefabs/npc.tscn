@@ -1089,3 +1089,9 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chatDetectionArea"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_n0lqu")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="chatDetectionArea" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chatDetectionArea" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
