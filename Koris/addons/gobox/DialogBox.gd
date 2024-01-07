@@ -12,8 +12,11 @@ var history : String = ""
 
 signal dialog_complete
 
+
+var dialog_playing: bool = false
+
 var _ActorName
-var _DialogRigScene : PackedScene = preload("res://addons/GoBox/scenes/DialogRig.tscn")
+var _DialogRigScene : PackedScene = preload("res://Koris/addons/gobox/scenes/DialogRig.tscn")
 var _added_rig = false
 var _DialogText
 var _PointerAnimation
@@ -65,7 +68,7 @@ func _process(_delta):
 		return
 	
 	var delta_visible = (_fast_foward_velocity * _delta if
-		Input.is_action_pressed("ui_accept") else _velocity * _delta)
+		Input.is_action_pressed("Interact") else _velocity * _delta)
 		
 	_characters_visible += delta_visible
 	_characters_visible = clampf(_characters_visible, 0.0, _DialogText.get_total_character_count())
@@ -77,7 +80,7 @@ func _process(_delta):
 	if (_characters_visible >= _DialogText.get_total_character_count() and _DialogText.get_total_character_count() > 0):
 		_PointerAnimation.play("PointerAnimation")
 		_Pointer.visible = true
-		if (Input.is_action_just_pressed("ui_accept")):
+		if (Input.is_action_just_pressed("Interact")):
 			_next_in_queue()
 	else:
 		_PointerAnimation.stop()
@@ -110,6 +113,8 @@ func set_input_disabled(disabled: bool):
 #Queues any number of lines to go into an animation cycle of the box. 
 #If the text does not fit, it will automatically be broken up for the current cycle.
 func queue_lines(text):
+	if (len(text) > 0):
+		dialog_playing = true
 	if _ActorName.text != "":
 		history += _ActorName.text + ": "
 	history += text + "\n"
@@ -122,10 +127,11 @@ func queue_lines(text):
 
 
 func _box_down():
+	dialog_playing = false
 	_DialogText.text = ""
 	_tween = get_tree().create_tween()
 	_tween.tween_property(_DialogRig, "position:y", get_viewport_rect().size.y + 300, 
-		_dialog_tween_duration).set_trans(Tween.TRANS_LINEAR)
+	_dialog_tween_duration).set_trans(Tween.TRANS_LINEAR)
 	await _tween.finished
 	emit_signal("dialog_complete")
 

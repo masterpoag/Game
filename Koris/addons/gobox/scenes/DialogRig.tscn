@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bm0ioyx7entoc"]
 
-[ext_resource type="Texture2D" uid="uid://ocfph1mdpcid" path="res://addons/gobox/textures/dialog.png" id="1_pm8cb"]
-[ext_resource type="Texture2D" uid="uid://div88yh28cqmf" path="res://addons/gobox/textures/pointer.png" id="2_1a5j3"]
-[ext_resource type="AudioStream" uid="uid://s2d0bq56nr22" path="res://addons/gobox/sound/text.wav" id="3_ukwjd"]
+[ext_resource type="Texture2D" uid="uid://ocfph1mdpcid" path="res://Koris/addons/gobox/textures/dialog.png" id="1_pm8cb"]
+[ext_resource type="Texture2D" uid="uid://div88yh28cqmf" path="res://Koris/addons/gobox/textures/pointer.png" id="2_1a5j3"]
+[ext_resource type="AudioStream" uid="uid://s2d0bq56nr22" path="res://Koris/addons/gobox/sound/text.wav" id="3_ukwjd"]
 
 [sub_resource type="Animation" id="Animation_6b8id"]
 resource_name = "PointerAnimation"
