@@ -9,6 +9,7 @@ class_name DialogBox
 
 var input_disabled: bool = false
 var history : String = ""
+var information = ["    Press {interaction key} to advance","    Press {interaction key} to close"]
 
 signal dialog_complete
 
@@ -80,6 +81,7 @@ func _process(_delta):
 	if (_characters_visible >= _DialogText.get_total_character_count() and _DialogText.get_total_character_count() > 0):
 		_PointerAnimation.play("PointerAnimation")
 		_Pointer.visible = true
+		$DialogRig/Container/Information.text = information[1]
 		if (Input.is_action_just_pressed("Interact")):
 			_next_in_queue()
 	else:
@@ -137,6 +139,7 @@ func _box_down():
 
 
 func _box_up():
+	$DialogRig/Container/Information.text = information[0]
 	_tween = get_tree().create_tween()
 	_tween.tween_property(_DialogRig, "position:y", 0, 
 		_dialog_tween_duration/2).set_trans(Tween.TRANS_LINEAR)

@@ -26,8 +26,15 @@ _data = {
 }
 
 [node name="DialogRig" type="VBoxContainer"]
-offset_right = 1500.0
-offset_bottom = 381.0
+anchors_preset = -1
+anchor_left = -0.002
+anchor_top = -0.032
+anchor_right = -0.002
+anchor_bottom = -0.032
+offset_left = 0.84
+offset_top = 22.56
+offset_right = 1500.84
+offset_bottom = 445.56
 theme_override_constants/separation = -8
 
 [node name="ActorName" type="Label" parent="."]
@@ -84,13 +91,35 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/DialogMargin/Pointer"]
-position = Vector2(0, 9.77191)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_1a5j3")
 
-[node name="LowerMargin" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(0, 50)
+[node name="Container" type="MarginContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_top = -24
+
+[node name="Information" type="Label" parent="Container"]
+z_index = 1
+custom_minimum_size = Vector2(50, -50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.235294, 0.313726, 0.85098, 1)
+theme_override_constants/outline_size = 17
+theme_override_constants/line_spacing = 5
+theme_override_font_sizes/font_size = 14
+text = "    Press {interaction key} to advance
+
+
+"
+
+[node name="LowerMargin" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
 [node name="TextSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ukwjd")
