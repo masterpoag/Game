@@ -69,7 +69,7 @@ const sprites = preload("res://entities/art/art.gd")
 #----------------------------------------------------------------
 
 var current_dir
-
+var chatting = false
 
 #combat system
 var enemyRange = false
@@ -174,7 +174,7 @@ func _physics_process(delta):
 #----------------------------------------------------------------
 
 func playerMovement(_delta):
-	if !attack:
+	if !attack and !chatting:
 		if Input.is_action_pressed("right"):
 
 			current_dir = "right"
@@ -299,6 +299,8 @@ func _on_out_of_combat_heal_timeout():
 
 
 
+
+
 # checks for if you hit something
 func _on_weapon_body_entered(body):
 	if body.is_in_group("Enemy"):
@@ -313,5 +315,17 @@ func _on_invframes_timeout():
 
 func collect(item):
 	inv.insert(item)
+#----------------------------------------------------------------
+
+#Checks for when chatting and when not chatting
+
+func _on_starter_town_chat_done():
+	chatting = false
+
+
+func _on_starter_town_chat_start():
+	chatting = true
+
+
 
 #end of script
