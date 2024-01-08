@@ -41,3 +41,10 @@ func spawnItemDrop(itemType,root,pos,scale):
 	Instance.size = scale
 	Instance.item = itemType
 	root.add_child(Instance)
+
+
+var prices = {
+	"apple": 10,
+	"stick": 5,
+	"Orange": 100
+	}

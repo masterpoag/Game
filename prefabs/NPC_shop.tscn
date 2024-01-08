@@ -1,13 +1,13 @@
-[gd_scene load_steps=23 format=3 uid="uid://by2n8pw4vw383"]
+[gd_scene load_steps=23 format=3 uid="uid://bco6rolib51q2"]
 
-[ext_resource type="Script" path="res://entities/scripts/NPCBase.gd" id="1_e23wj"]
-[ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_jmh7l"]
-[ext_resource type="Script" path="res://entities/scripts/modulation.gd" id="3_xrqxk"]
-[ext_resource type="Texture2D" uid="uid://dvvse1sfihe0r" path="res://entities/art/clothes/basic.png" id="4_1xgfi"]
-[ext_resource type="Texture2D" uid="uid://bo0uu6g8gd0pc" path="res://entities/art/eyes/eyes.png" id="5_3nxft"]
-[ext_resource type="Texture2D" uid="uid://bui5x2cxytu7u" path="res://entities/art/hair/bob .png" id="6_qe40e"]
-[ext_resource type="Texture2D" uid="uid://d3l76dg6w8b5c" path="res://entities/art/acc/beard.png" id="7_5mhxc"]
-[ext_resource type="Texture2D" uid="uid://dvkteobcqucd" path="res://entities/art/shadow.png" id="8_3tdbq"]
+[ext_resource type="Script" path="res://entities/scripts/NPCBase.gd" id="1_jbu7b"]
+[ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_ny4x8"]
+[ext_resource type="Script" path="res://entities/scripts/modulation.gd" id="3_hmrlf"]
+[ext_resource type="Texture2D" uid="uid://dvvse1sfihe0r" path="res://entities/art/clothes/basic.png" id="4_ajqok"]
+[ext_resource type="Texture2D" uid="uid://bo0uu6g8gd0pc" path="res://entities/art/eyes/eyes.png" id="5_y8luw"]
+[ext_resource type="Texture2D" uid="uid://bui5x2cxytu7u" path="res://entities/art/hair/bob .png" id="6_ap1f2"]
+[ext_resource type="Texture2D" uid="uid://d3l76dg6w8b5c" path="res://entities/art/acc/beard.png" id="7_yakp1"]
+[ext_resource type="Texture2D" uid="uid://dvkteobcqucd" path="res://entities/art/shadow.png" id="8_c8762"]
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001
@@ -405,6 +405,21 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1), Vector2i(7, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_47ese"]
+resource_name = "fix"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Weapon/hitRange:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_w84vg"]
@@ -993,21 +1008,6 @@ tracks/4/keys = {
 "values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(4, 2), Vector2i(5, 2), Vector2i(6, 2), Vector2i(7, 2)]
 }
 
-[sub_resource type="Animation" id="Animation_47ese"]
-resource_name = "fix"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Weapon/hitRange:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ajxvw"]
 _data = {
 "RESET": SubResource("Animation_v2eo2"),
@@ -1033,7 +1033,7 @@ radius = 4.0
 height = 16.0
 
 [node name="NPC" type="CharacterBody2D"]
-script = ExtResource("1_e23wj")
+script = ExtResource("1_jbu7b")
 
 [node name="sprite" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -1043,52 +1043,52 @@ metadata/_edit_group_ = true
 
 [node name="Body" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
-texture = ExtResource("2_jmh7l")
+texture = ExtResource("2_ny4x8")
 offset = Vector2(0, -15)
 hframes = 8
 vframes = 49
-script = ExtResource("3_xrqxk")
+script = ExtResource("3_hmrlf")
 
 [node name="Clothes" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
-texture = ExtResource("4_1xgfi")
+texture = ExtResource("4_ajqok")
 offset = Vector2(0, -15)
 hframes = 80
 vframes = 49
 frame = 80
-script = ExtResource("3_xrqxk")
+script = ExtResource("3_hmrlf")
 
 [node name="Eyes" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
-texture = ExtResource("5_3nxft")
+texture = ExtResource("5_y8luw")
 offset = Vector2(0, -15)
 hframes = 112
 vframes = 49
 frame = 112
-script = ExtResource("3_xrqxk")
+script = ExtResource("3_hmrlf")
 
 [node name="Hair" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
-texture = ExtResource("6_qe40e")
+texture = ExtResource("6_ap1f2")
 offset = Vector2(0, -15)
 hframes = 112
 vframes = 49
 frame = 112
-script = ExtResource("3_xrqxk")
+script = ExtResource("3_hmrlf")
 
 [node name="Acc" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
-texture = ExtResource("7_5mhxc")
+texture = ExtResource("7_yakp1")
 offset = Vector2(0, -15)
 hframes = 112
 vframes = 49
 frame = 112
-script = ExtResource("3_xrqxk")
+script = ExtResource("3_hmrlf")
 
 [node name="Shadow" type="Sprite2D" parent="sprite"]
 y_sort_enabled = true
 position = Vector2(0, 12)
-texture = ExtResource("8_3tdbq")
+texture = ExtResource("8_c8762")
 offset = Vector2(0, -15)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]

@@ -14,3 +14,6 @@ func update(slot: InvSlot):
 		amount_text.visible = true
 		amount_text.text = str(slot.amount)
 
+
+func _on_button_pressed():
+	print("pressed")

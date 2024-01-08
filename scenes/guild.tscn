@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjf2h4g0nll0h"]
+
+[ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="1_2lowp"]
+[ext_resource type="PackedScene" uid="uid://djvsf38r1to17" path="res://prefabs/pausescreen.tscn" id="2_3ajvb"]
+[ext_resource type="Script" path="res://Koris/addons/gobox/DialogBox.gd" id="3_b40uv"]
+[ext_resource type="PackedScene" uid="uid://bm0ioyx7entoc" path="res://Koris/addons/gobox/scenes/DialogRig.tscn" id="4_p4qmo"]
+[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="5_mqr7k"]
+[ext_resource type="PackedScene" uid="uid://bco6rolib51q2" path="res://prefabs/NPC_shop.tscn" id="6_6p07i"]
+[ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="7_v8nrs"]
+[ext_resource type="PackedScene" uid="uid://ctxis84dr5dql" path="res://inventory system/Shop_inventory_ui.tscn" id="9_ercg3"]
+[ext_resource type="Script" path="res://inventory system/scripts/player selling.gd" id="9_wyp2y"]
+
+[node name="Guild" type="Node2D"]
+
+[node name="Player camera" parent="." instance=ExtResource("1_2lowp")]
+
+[node name="Pause" parent="." instance=ExtResource("2_3ajvb")]
+process_mode = 3
+
+[node name="CanvasLayer" parent="Pause" index="0"]
+visible = false
+
+[node name="overlay" parent="Pause/CanvasLayer" index="0"]
+custom_minimum_size = Vector2(0, 19.21)
+
+[node name="CenterContainer" parent="Pause/CanvasLayer/overlay" index="0"]
+scale = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogBox" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -750.0
+offset_top = -478.0
+offset_right = 750.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("3_b40uv")
+
+[node name="DialogRig" parent="CanvasLayer/DialogBox" instance=ExtResource("4_p4qmo")]
+layout_mode = 2
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("5_mqr7k")
+format = 2
+
+[node name="NPC" parent="." instance=ExtResource("6_6p07i")]
+
+[node name="Player" parent="." instance=ExtResource("7_v8nrs")]
+
+[node name="Inventory_UI" parent="Player/CanvasLayer" index="1"]
+process_mode = 4
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -66.0
+offset_right = 42.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shop" parent="Control/VBoxContainer" instance=ExtResource("9_ercg3")]
+layout_mode = 2
+
+[node name="Player shop" parent="Control/VBoxContainer" instance=ExtResource("9_ercg3")]
+layout_mode = 2
+script = ExtResource("9_wyp2y")
+
+[connection signal="shop" from="NPC" to="Control/VBoxContainer/Shop" method="_on_npc_shop"]
+[connection signal="shop" from="NPC" to="Control/VBoxContainer/Player shop" method="_on_npc_shop"]
+
+[editable path="Pause"]
+[editable path="Player"]

@@ -13,6 +13,7 @@ var direction = Vector2.RIGHT
 var startPos
 var named
 signal dialog(name,text)
+signal shop()
 
 enum {
 	IDLE,
@@ -24,7 +25,7 @@ enum {
 
 
 
-
+		
 
 #Char customization
 @onready var bodysprite = $sprite/Body
@@ -55,16 +56,19 @@ func _process(delta):
 			MOVE:
 				move(delta)
 		if Input.is_action_just_pressed("Interact"):
-			dialog.emit(named,greetings[randi() % greetings.size()])
-			isRoaming = false
-			is_chatting = true
-			$sprite/AnimationPlayer.stop()
-				
+			if get_tree().current_scene.name != "Guild":
+				dialog.emit(named,greetings[randi() % greetings.size()])
+				isRoaming = false
+				is_chatting = true
+				$sprite/AnimationPlayer.stop()
+			else:
+				shop.emit()
 	if position == lastPos and currentState != IDLE:
 		_on_timer_timeout()
 
 
 func _ready():
+	
 	randomize()
 	startPos = position
 	hairChange(randi_range(0,sprites.hair.size()-1))
@@ -274,3 +278,4 @@ var names = [
 func _on_starter_town_chat_done():
 	isRoaming = true
 	is_chatting = false
+

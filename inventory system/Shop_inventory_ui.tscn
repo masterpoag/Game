@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctxis84dr5dql"]
+
+[ext_resource type="Script" path="res://inventory system/scripts/Shop.gd" id="1_5rgpw"]
+[ext_resource type="Texture2D" uid="uid://ux4ea1imdr6g" path="res://inventory system/UI/inventory-background.png" id="2_i4feb"]
+[ext_resource type="PackedScene" uid="uid://delty7ym4tlno" path="res://inventory system/Shopslot.tscn" id="3_kpxql"]
+
+[node name="Inventory_UI" type="Control"]
+process_mode = 3
+custom_minimum_size = Vector2(84, 64)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -762.0
+offset_top = -437.0
+offset_right = -678.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5rgpw")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 64.0
+texture = ExtResource("2_i4feb")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
+layout_mode = 2
+
+[node name="overlay" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.352941)
