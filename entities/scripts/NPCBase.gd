@@ -270,7 +270,9 @@ var names = [
 	"Drew",
 	"Peyton",
 	"Switch",
-	"Aqureil"
+	"Aqureil",
+	"Cujo",
+	"Slushy",
 ]
 
 
