@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctxis84dr5dql"]
+[gd_scene load_steps=5 format=3 uid="uid://ctxis84dr5dql"]
 
 [ext_resource type="Script" path="res://inventory system/scripts/Shop.gd" id="1_5rgpw"]
 [ext_resource type="Texture2D" uid="uid://ux4ea1imdr6g" path="res://inventory system/UI/inventory-background.png" id="2_i4feb"]
 [ext_resource type="PackedScene" uid="uid://delty7ym4tlno" path="res://inventory system/Shopslot.tscn" id="3_kpxql"]
+[ext_resource type="Script" path="res://inventory system/scripts/Selling slot.gd" id="4_i86qd"]
 
 [node name="Inventory_UI" type="Control"]
 process_mode = 3
@@ -20,6 +21,26 @@ offset_bottom = -373.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5rgpw")
+
+[node name="overlay" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.352941)
+
+[node name="RichTextLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 165.0
+offset_bottom = 29.0
+scale = Vector2(0.5, 0.5)
+text = "buy(LMB) sell(RMB)"
+horizontal_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
@@ -48,46 +69,48 @@ columns = 4
 
 [node name="slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
+script = ExtResource("4_i86qd")
 
 [node name="slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
-
-[node name="overlay" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.352941)
+script = ExtResource("4_i86qd")

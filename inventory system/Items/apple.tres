@@ -7,3 +7,5 @@
 script = ExtResource("1_p45rg")
 name = "apple"
 texture = ExtResource("2_t8hvx")
+Buy_price = "7"
+Sell_price = "5"

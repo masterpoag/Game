@@ -15,7 +15,7 @@ var invable = 0
 
 var following = false
 
-var droppedItem = preload("res://inventory system/Items/stick.tres")
+var droppedItem = preload("res://inventory system/Items/slime.tres")
 
 
 func _ready():

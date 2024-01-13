@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://nsf8rihrpf6l"]
+
+[ext_resource type="Script" path="res://inventory system/scripts/Inventory_items.gd" id="1_fhrlc"]
+[ext_resource type="Texture2D" uid="uid://bs4igvfvh2dx2" path="res://inventory system/inventories/Blue.png" id="2_eqsit"]
+
+[resource]
+script = ExtResource("1_fhrlc")
+name = "Slime"
+texture = ExtResource("2_eqsit")
+Buy_price = "15"
+Sell_price = "10"

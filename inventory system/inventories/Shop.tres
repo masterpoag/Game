@@ -1,21 +1,19 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=16 format=3 uid="uid://djc6gc6bwrlf8"]
+[gd_resource type="Resource" script_class="Inv" load_steps=17 format=3 uid="uid://djc6gc6bwrlf8"]
 
 [ext_resource type="Script" path="res://inventory system/scripts/inv.gd" id="1_n8et4"]
 [ext_resource type="Resource" uid="uid://dxjl4m1mjpxj0" path="res://inventory system/Items/apple.tres" id="2_658c3"]
 [ext_resource type="Script" path="res://inventory system/scripts/stacking.gd" id="3_h5jl5"]
-
-[sub_resource type="Resource" id="Resource_6oliv"]
-script = ExtResource("3_h5jl5")
-item = ExtResource("2_658c3")
-amount = 0
+[ext_resource type="Resource" uid="uid://c8dxk05mv7poe" path="res://inventory system/Items/stick.tres" id="4_f36sw"]
 
 [sub_resource type="Resource" id="Resource_o1tm7"]
 script = ExtResource("3_h5jl5")
-amount = 0
+item = ExtResource("2_658c3")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_tewim"]
 script = ExtResource("3_h5jl5")
-amount = 0
+item = ExtResource("4_f36sw")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_nrhsy"]
 script = ExtResource("3_h5jl5")
@@ -53,6 +51,10 @@ amount = 0
 script = ExtResource("3_h5jl5")
 amount = 0
 
+[sub_resource type="Resource" id="Resource_6rpx1"]
+script = ExtResource("3_h5jl5")
+amount = 0
+
 [resource]
 script = ExtResource("1_n8et4")
-slots = Array[ExtResource("3_h5jl5")]([SubResource("Resource_6oliv"), SubResource("Resource_o1tm7"), SubResource("Resource_tewim"), SubResource("Resource_nrhsy"), SubResource("Resource_g00tt"), SubResource("Resource_p5k5q"), SubResource("Resource_fajmx"), SubResource("Resource_vjy7x"), SubResource("Resource_fdadg"), SubResource("Resource_t3v6b"), SubResource("Resource_j2bd3"), SubResource("Resource_ic3vj")])
+slots = Array[ExtResource("3_h5jl5")]([SubResource("Resource_o1tm7"), SubResource("Resource_tewim"), SubResource("Resource_nrhsy"), SubResource("Resource_g00tt"), SubResource("Resource_p5k5q"), SubResource("Resource_fajmx"), SubResource("Resource_vjy7x"), SubResource("Resource_fdadg"), SubResource("Resource_t3v6b"), SubResource("Resource_j2bd3"), SubResource("Resource_ic3vj"), SubResource("Resource_6rpx1")])

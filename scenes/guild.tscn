@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjf2h4g0nll0h"]
+[gd_scene load_steps=9 format=3 uid="uid://cjf2h4g0nll0h"]
 
 [ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="1_2lowp"]
 [ext_resource type="PackedScene" uid="uid://djvsf38r1to17" path="res://prefabs/pausescreen.tscn" id="2_3ajvb"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bco6rolib51q2" path="res://prefabs/NPC_shop.tscn" id="6_6p07i"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="7_v8nrs"]
 [ext_resource type="PackedScene" uid="uid://ctxis84dr5dql" path="res://inventory system/Shop_inventory_ui.tscn" id="9_ercg3"]
-[ext_resource type="Script" path="res://inventory system/scripts/player selling.gd" id="9_wyp2y"]
 
 [node name="Guild" type="Node2D"]
 
@@ -80,12 +79,7 @@ grow_vertical = 2
 [node name="Shop" parent="Control/VBoxContainer" instance=ExtResource("9_ercg3")]
 layout_mode = 2
 
-[node name="Player shop" parent="Control/VBoxContainer" instance=ExtResource("9_ercg3")]
-layout_mode = 2
-script = ExtResource("9_wyp2y")
-
 [connection signal="shop" from="NPC" to="Control/VBoxContainer/Shop" method="_on_npc_shop"]
-[connection signal="shop" from="NPC" to="Control/VBoxContainer/Player shop" method="_on_npc_shop"]
 
 [editable path="Pause"]
 [editable path="Player"]
