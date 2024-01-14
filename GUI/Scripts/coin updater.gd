@@ -2,4 +2,4 @@ extends Label
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.text = str(randi_range(0,100000))
+	self.text = str(Global.playerCoins)
