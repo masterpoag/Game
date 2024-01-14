@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://752hjmp66b0o"]
+
+[ext_resource type="Texture2D" uid="uid://c0weaqmge8dbg" path="res://art/coins/single gold coin.png" id="1_0mjw0"]
+[ext_resource type="Script" path="res://GUI/Scripts/coin updater.gd" id="2_omxav"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(32, 1)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 16)
+layout_mode = 2
+texture = ExtResource("1_0mjw0")
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "1000"
+horizontal_alignment = 1
+script = ExtResource("2_omxav")

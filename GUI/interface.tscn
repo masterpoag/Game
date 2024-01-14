@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xis4df8vo7uh"]
+[gd_scene load_steps=8 format=3 uid="uid://xis4df8vo7uh"]
 
 [ext_resource type="Script" path="res://GUI/Scripts/interface.gd" id="1_80bqf"]
 [ext_resource type="PackedScene" uid="uid://cbk2exn6r7804" path="res://GUI/bar.tscn" id="1_icbkr"]
@@ -6,12 +6,12 @@
 [ext_resource type="Script" path="res://GUI/Scripts/healthbar.gd" id="3_5ychv"]
 [ext_resource type="Texture2D" uid="uid://dojxepvfftip3" path="res://GUI/assets/GUI/label_HP_bg.png" id="5_s7m28"]
 [ext_resource type="Script" path="res://GUI/Scripts/Level counter.gd" id="6_l6ehn"]
+[ext_resource type="PackedScene" uid="uid://752hjmp66b0o" path="res://GUI/Coin counter.tscn" id="7_qh670"]
 
 [node name="Interface" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_80bqf")
@@ -44,6 +44,14 @@ grow_vertical = 2
 text = "Level: 1"
 horizontal_alignment = 1
 script = ExtResource("6_l6ehn")
+
+[node name="Coin counter" parent="." instance=ExtResource("7_qh670")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1535.0
+offset_right = 1596.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="exp_change" from="." to="XP" method="_on_interface_exp_change"]
 [connection signal="health_changed" from="." to="HP" method="_on_interface_health_changed"]
