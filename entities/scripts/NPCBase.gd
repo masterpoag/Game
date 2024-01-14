@@ -55,7 +55,7 @@ func _process(delta):
 				direction = directions[randi() % directions.size()]
 			MOVE:
 				move(delta)
-		if Input.is_action_just_pressed("Interact"):
+		if Input.is_action_just_pressed("Interact") and playerIsChatZone:
 			if get_tree().current_scene.name != "Guild":
 				dialog.emit(named,greetings[randi() % greetings.size()])
 				isRoaming = false
