@@ -5,10 +5,11 @@ func _ready():
 	self.zoom = Vector2(4,4)
 	match get_tree().get_current_scene().get_name():
 		"city":
-			self.limit_bottom = 192 
-			self.limit_right = 448
-			self.limit_top = -112
-			self.limit_left = -48
+			self.zoom = Vector2(2,2)
+			self.limit_bottom = 90000000
+			self.limit_right = 900000000
+			self.limit_top = -9000000
+			self.limit_left = -90000000
 		"starter town":
 			self.limit_top = -96
 			self.limit_bottom = 400
