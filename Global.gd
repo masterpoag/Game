@@ -19,6 +19,8 @@ var eyes_mod = Color(1, 1, 1, 1)
 var posx = 0
 var posy = 0
 
+var playerCoins = 100
+
 var EXPToAdd = 0
 
 var damage
@@ -41,10 +43,3 @@ func spawnItemDrop(itemType,root,pos,scale):
 	Instance.size = scale
 	Instance.item = itemType
 	root.add_child(Instance)
-
-
-var prices = {
-	"apple": 10,
-	"stick": 5,
-	"Orange": 100
-	}
