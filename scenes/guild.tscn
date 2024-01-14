@@ -46,6 +46,9 @@ layout_mode = 2
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("5_mqr7k")
 format = 2
+layer_0/name = "Ground"
+layer_1/name = "Object"
+layer_1/tile_data = PackedInt32Array()
 
 [node name="NPC" parent="." instance=ExtResource("6_6p07i")]
 
@@ -77,6 +80,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Shop" parent="Control/VBoxContainer" instance=ExtResource("9_ercg3")]
+visible = false
+z_index = 635
 layout_mode = 2
 
 [connection signal="shop" from="NPC" to="Control/VBoxContainer/Shop" method="_on_npc_shop"]
