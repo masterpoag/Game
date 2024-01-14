@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=17 format=3 uid="uid://djc6gc6bwrlf8"]
+[gd_resource type="Resource" script_class="Inv" load_steps=18 format=3 uid="uid://djc6gc6bwrlf8"]
 
 [ext_resource type="Script" path="res://inventory system/scripts/inv.gd" id="1_n8et4"]
 [ext_resource type="Resource" uid="uid://dxjl4m1mjpxj0" path="res://inventory system/Items/apple.tres" id="2_658c3"]
 [ext_resource type="Script" path="res://inventory system/scripts/stacking.gd" id="3_h5jl5"]
 [ext_resource type="Resource" uid="uid://c8dxk05mv7poe" path="res://inventory system/Items/stick.tres" id="4_f36sw"]
+[ext_resource type="Resource" uid="uid://nsf8rihrpf6l" path="res://inventory system/Items/slime.tres" id="5_g73m8"]
 
 [sub_resource type="Resource" id="Resource_o1tm7"]
 script = ExtResource("3_h5jl5")
@@ -17,6 +18,7 @@ amount = 1
 
 [sub_resource type="Resource" id="Resource_nrhsy"]
 script = ExtResource("3_h5jl5")
+item = ExtResource("5_g73m8")
 amount = 0
 
 [sub_resource type="Resource" id="Resource_g00tt"]
