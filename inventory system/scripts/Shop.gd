@@ -9,7 +9,7 @@ var state = false
 func _ready():
 	inv.update.connect(update_slots)
 	update_slots()
-	open()
+	close()
 
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
@@ -20,19 +20,17 @@ func open():
 	update_slots()
 	visible = true
 	is_open = true
-	pause()
+	get_tree().current_scene.get_node("Player").get_node("sprite").get_node("AnimationPlayer").stop()
+	get_tree().current_scene.get_node("Player").chatting = true
 
 
 func close():
 	visible = false
 	is_open = false
 	state = false
-	get_tree().paused = false
+	get_tree().current_scene.get_node("Player").chatting = false
 
-func pause():
-	pass
-	#state = not get_tree().paused
-	#get_tree().paused = state
+
 
 
 func _on_npc_shop():

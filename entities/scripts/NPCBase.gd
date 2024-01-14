@@ -36,39 +36,45 @@ enum {
 const sprites = preload("res://entities/art/art.gd")
 #----------------------------------------------------------------
 func _process(delta):
-	if currentState == 0 or currentState == 1:
-		$sprite/AnimationPlayer.stop()
-	elif currentState == 2 and !is_chatting:
-		if direction.x == -1:
-			$sprite/AnimationPlayer.play("left walk")
-		if direction.x == 1:
-			$sprite/AnimationPlayer.play("right walk")
-		if direction.y == -1:
-			$sprite/AnimationPlayer.play("back walk")
-		if direction.y == 1:
-			$sprite/AnimationPlayer.play("front walk")
-	if isRoaming:
-		match currentState:
-			IDLE:
-				pass
-			new_DIR:
-				direction = directions[randi() % directions.size()]
-			MOVE:
-				move(delta)
+	if get_tree().current_scene.name != "Guild":
+		if currentState == 0 or currentState == 1:
+			$sprite/AnimationPlayer.stop()
+		elif currentState == 2 and !is_chatting:
+			if direction.x == -1:
+				$sprite/AnimationPlayer.play("left walk")
+			if direction.x == 1:
+				$sprite/AnimationPlayer.play("right walk")
+			if direction.y == -1:
+				$sprite/AnimationPlayer.play("back walk")
+			if direction.y == 1:
+				$sprite/AnimationPlayer.play("front walk")
+		if isRoaming:
+			match currentState:
+				IDLE:
+					pass
+				new_DIR:
+					direction = directions[randi() % directions.size()]
+				MOVE:
+					move(delta)
+			if Input.is_action_just_pressed("Interact") and playerIsChatZone:
+				if get_tree().current_scene.name != "Guild":
+					dialog.emit(named,greetings[randi() % greetings.size()])
+					isRoaming = false
+					is_chatting = true
+					$sprite/AnimationPlayer.stop()
+				else:
+					shop.emit()
+		if position == lastPos and currentState != IDLE:
+			_on_timer_timeout()
+	else:
 		if Input.is_action_just_pressed("Interact") and playerIsChatZone:
-			if get_tree().current_scene.name != "Guild":
-				dialog.emit(named,greetings[randi() % greetings.size()])
-				isRoaming = false
-				is_chatting = true
-				$sprite/AnimationPlayer.stop()
-			else:
+			if get_tree().current_scene.name == "Guild":
 				shop.emit()
-	if position == lastPos and currentState != IDLE:
-		_on_timer_timeout()
-
 
 func _ready():
-	
+	if get_tree().current_scene.name == "Guild":
+		$sprite/AnimationPlayer.play("front walk")
+		$sprite/AnimationPlayer.stop()
 	randomize()
 	startPos = position
 	hairChange(randi_range(0,sprites.hair.size()-1))
