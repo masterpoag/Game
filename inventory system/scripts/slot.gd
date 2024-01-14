@@ -3,7 +3,6 @@ extends Panel
 @onready var item_visual: Sprite2D = $CenterContainer/Panel/item
 @onready var Buy_price: Label = $CenterContainer/Panel/Label
 
-
 func update(slot: InvSlot):
 	if !slot.item:
 		item_visual.visible = false
@@ -15,14 +14,3 @@ func update(slot: InvSlot):
 		Buy_price.visible = true
 		
 		Buy_price.text = str(slot.amount)
-	
-
-
-
-func _on_button_gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		match event.button_index:
-			MOUSE_BUTTON_LEFT:
-				print("buy")
-			MOUSE_BUTTON_RIGHT:
-				print("sell")

@@ -42,6 +42,15 @@ scale = Vector2(0.5, 0.5)
 text = "buy(LMB) sell(RMB)"
 horizontal_alignment = 1
 
+[node name="error message" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -19.0
+offset_right = 165.0
+offset_bottom = 21.0
+scale = Vector2(0.5, 0.5)
+horizontal_alignment = 1
+
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
 offset_right = 85.0
@@ -114,3 +123,16 @@ script = ExtResource("4_i86qd")
 [node name="slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kpxql")]
 layout_mode = 2
 script = ExtResource("4_i86qd")
+
+[connection signal="error" from="NinePatchRect/GridContainer/slot" to="." method="_on_slot_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot2" to="." method="_on_slot_2_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot3" to="." method="_on_slot_3_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot4" to="." method="_on_slot_4_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot5" to="." method="_on_slot_5_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot6" to="." method="_on_slot_6_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot7" to="." method="_on_slot_7_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot8" to="." method="_on_slot_8_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot9" to="." method="_on_slot_9_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot10" to="." method="_on_slot_10_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot11" to="." method="_on_slot_11_error"]
+[connection signal="error" from="NinePatchRect/GridContainer/slot12" to="." method="_on_slot_12_error"]
