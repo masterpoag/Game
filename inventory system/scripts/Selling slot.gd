@@ -24,7 +24,7 @@ func update(slot: InvSlot):
 		Buy_price.visible = true
 		Sell_price.visible = true
 		Buy_price.text = "B$"+str(slot.item.Buy_price)
-		Sell_price.text = "B$"+str(slot.item.Sell_price)
+		Sell_price.text = "S$"+str(slot.item.Sell_price)
 
 
 
