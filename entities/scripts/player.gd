@@ -89,6 +89,9 @@ var last = 0
 #----------------------------------------------------------------
 
 func _ready():
+	if Global.lastLoaded == "Guild":
+		position = Vector2(262,321)
+		Global.lastLoaded == "City"
 	attack = false
 	# this shouldnt be needed anymore
 #	if !Global.firstvisit && get_tree().get_current_scene().get_name() == "city":
@@ -170,7 +173,7 @@ func _physics_process(delta):
 	if health <=0:
 		health = 0
 		playerAlive = false
-		print("you Died")
+		get_tree().change_scene_to_file("res://scenes/title.tscn")
 #----------------------------------------------------------------
 
 func playerMovement(_delta):
