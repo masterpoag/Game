@@ -139,6 +139,7 @@ func _box_down():
 
 
 func _box_up():
+	self.visible = true
 	$DialogRig/Container/Information.text = information[0]
 	_tween = get_tree().create_tween()
 	_tween.tween_property(_DialogRig, "position:y", 0, 
