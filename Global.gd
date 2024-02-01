@@ -19,12 +19,14 @@ var eyes_mod = Color(1, 1, 1, 1)
 var posx = 0
 var posy = 0
 
-var playerCoins = 100
+var playerCoins = 0
 
 var EXPToAdd = 0
 
 var damage
 var pos
+
+var lastLoaded = ""
 
 var indicator = preload("res://prefabs/damage_indicator.tscn")
 
