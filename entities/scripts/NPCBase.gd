@@ -120,6 +120,9 @@ func _on_chat_detection_area_body_entered(body):
 func _on_chat_detection_area_body_exited(body):
 	if body.is_in_group("Player"):
 		playerIsChatZone= false
+		if is_chatting: 
+			is_chatting = !is_chatting
+			isRoaming = true
 
 
 func _on_timer_timeout():
