@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvwhec7wpmi1e"]
+[gd_scene load_steps=13 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="Script" path="res://scenes/scripts/starter forest.gd" id="1_ut855"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://me1cjf6w8072" path="res://Music/025_A_New_Town.mp3" id="5_vqv2u"]
 [ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="6_qsbs2"]
 [ext_resource type="PackedScene" uid="uid://djvsf38r1to17" path="res://prefabs/pausescreen.tscn" id="7_s8ipp"]
-[ext_resource type="PackedScene" uid="uid://mnbpwnisl58g" path="res://scenes/mob spawning/slimespawner.tscn" id="8_raqhc"]
 [ext_resource type="Script" path="res://scenes/scripts/AudioStreamPlayer2D.gd" id="8_u3mps"]
 [ext_resource type="PackedScene" uid="uid://by2n8pw4vw383" path="res://prefabs/npc.tscn" id="9_l0gi7"]
 [ext_resource type="Script" path="res://Koris/addons/gobox/DialogBox.gd" id="10_i4ilt"]
@@ -67,12 +66,10 @@ custom_minimum_size = Vector2(0, 19.21)
 [node name="CenterContainer" parent="Pause/CanvasLayer/overlay" index="0"]
 scale = Vector2(2, 2)
 
-[node name="slimespawner" parent="." instance=ExtResource("8_raqhc")]
-
 [node name="NPC" parent="." instance=ExtResource("9_l0gi7")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(56, 168)
+position = Vector2(534, 265)
 
 [node name="NPC2" parent="." instance=ExtResource("9_l0gi7")]
 z_index = 2
