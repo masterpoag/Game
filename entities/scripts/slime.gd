@@ -57,10 +57,9 @@ func _physics_process(_delta):
 		if enemyDetected:
 			following = true
 			if $invFrames.is_stopped():
-				velocity = (global_position.direction_to(enemy.position) * speed)
-				print(velocity)
+				velocity = (global_position.direction_to(enemy.position) * speed)*abs((self.position-enemy.position)/90)
 			else:
-				velocity = (global_position.direction_to(enemy.position) * speed/2)
+				velocity = (global_position.direction_to(enemy.position) * speed)*abs((self.position-enemy.position)/190)
 			$AnimatedSprite2D.play("jump")
 			if(enemy.position.x - position.x) < 0:
 				$AnimatedSprite2D.flip_h = true
