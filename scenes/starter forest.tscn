@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvwhec7wpmi1e"]
+[gd_scene load_steps=15 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="Script" path="res://scenes/scripts/starter forest.gd" id="1_ut855"]
 [ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
@@ -11,9 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://by2n8pw4vw383" path="res://prefabs/npc.tscn" id="9_l0gi7"]
 [ext_resource type="Script" path="res://Koris/addons/gobox/DialogBox.gd" id="10_i4ilt"]
 [ext_resource type="PackedScene" uid="uid://bm0ioyx7entoc" path="res://Koris/addons/gobox/scenes/DialogRig.tscn" id="11_yk0wa"]
+[ext_resource type="Script" path="res://scenes/scripts/loadGuild.gd" id="12_p4gcs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtp7u"]
 size = Vector2(33.625, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yme48"]
 
 [node name="starter town" type="Node2D"]
 y_sort_enabled = true
@@ -21,7 +24,7 @@ script = ExtResource("1_ut855")
 
 [node name="Player" parent="." instance=ExtResource("2_trlyf")]
 z_index = 2
-position = Vector2(200, 264)
+position = Vector2(534, 263)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -69,21 +72,22 @@ scale = Vector2(2, 2)
 [node name="NPC" parent="." instance=ExtResource("9_l0gi7")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(534, 265)
+position = Vector2(154, 37)
 
 [node name="NPC2" parent="." instance=ExtResource("9_l0gi7")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(296, -8)
+position = Vector2(211, 203)
 
 [node name="NPC3" parent="." instance=ExtResource("9_l0gi7")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(376, 312)
+position = Vector2(40, 124)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DialogBox" type="CenterContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -99,14 +103,23 @@ script = ExtResource("10_i4ilt")
 [node name="DialogRig" parent="CanvasLayer/DialogBox" instance=ExtResource("11_yk0wa")]
 layout_mode = 2
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(249, 294)
+script = ExtResource("12_p4gcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(14, -4)
+shape = SubResource("RectangleShape2D_yme48")
+
 [connection signal="chat_done" from="." to="Player" method="_on_starter_town_chat_done"]
 [connection signal="chat_done" from="." to="NPC" method="_on_starter_town_chat_done"]
 [connection signal="chat_start" from="." to="Player" method="_on_starter_town_chat_start"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
 [connection signal="dialog" from="NPC" to="." method="_on_npc_dialog"]
-[connection signal="dialog" from="NPC2" to="." method="_on_npc_2_dialog"]
-[connection signal="dialog" from="NPC3" to="." method="_on_npc_3_dialog"]
+[connection signal="dialog" from="NPC2" to="." method="_on_npc_dialog"]
+[connection signal="dialog" from="NPC3" to="." method="_on_npc_dialog"]
 [connection signal="dialog_complete" from="CanvasLayer/DialogBox" to="." method="_on_dialog_box_dialog_complete"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
 
 [editable path="Pause"]

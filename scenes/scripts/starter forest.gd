@@ -3,6 +3,7 @@ extends Node2D
 signal chat_done()
 signal chat_start()
 
+
 func send_info(name,text):
 	$CanvasLayer/DialogBox.set_actor_name(name)
 	$CanvasLayer/DialogBox.queue_lines(text)
