@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://saviuogncplj"]
 
 [ext_resource type="Script" path="res://scenes/scripts/title screen buttons.gd" id="1_5u6st"]
-[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_bei6w"]
+[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://tileset.tres" id="2_bei6w"]
 [ext_resource type="PackedScene" uid="uid://ne6w5hm2g26a" path="res://entities/slime.tscn" id="3_efew3"]
 [ext_resource type="AudioStream" uid="uid://brx7vq1ebba2s" path="res://Music/040_Happy_Thought_3 title.mp3" id="4_ie6hm"]
 

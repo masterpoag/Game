@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bvwhec7wpmi1e"]
 
 [ext_resource type="Script" path="res://scenes/scripts/starter forest.gd" id="1_ut855"]
-[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="2_1qk68"]
+[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://tileset.tres" id="2_1qk68"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="2_trlyf"]
 [ext_resource type="Script" path="res://scenes/scripts/back to town warp.gd" id="5_oyv4v"]
 [ext_resource type="AudioStream" uid="uid://me1cjf6w8072" path="res://Music/025_A_New_Town.mp3" id="5_vqv2u"]

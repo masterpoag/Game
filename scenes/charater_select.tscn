@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://cvfxil5wxawv"]
 
 [ext_resource type="Script" path="res://scenes/scripts/startgame.gd" id="1_avssh"]
-[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="1_eu5ge"]
+[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://tileset.tres" id="1_eu5ge"]
 [ext_resource type="Texture2D" uid="uid://dkdiobu6at1kv" path="res://entities/art/characters/char1.png" id="2_g4ckc"]
 [ext_resource type="Script" path="res://scenes/scripts/charater select model.gd" id="2_od15t"]
 [ext_resource type="Texture2D" uid="uid://dvvse1sfihe0r" path="res://entities/art/clothes/basic.png" id="4_3mwyc"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://dad7lqam4k1rw" path="res://GUI/Comfortaa-Bold.ttf" id="11_euwdh"]
 [ext_resource type="FontFile" uid="uid://40r307w0wekr" path="res://GUI/assets/font/Comfortaa-Bold.ttf" id="11_surv5"]
 [ext_resource type="AudioStream" uid="uid://psmmd5pymjre" path="res://Music/sb_indreams.mp3" id="12_6xxqm"]
+
 
 [sub_resource type="Animation" id="Animation_v2eo2"]
 length = 0.001

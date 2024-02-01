@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bw4k7g8tl8cww" path="res://GUI/player_camera.tscn" id="1_2lowp"]
 [ext_resource type="PackedScene" uid="uid://djvsf38r1to17" path="res://prefabs/pausescreen.tscn" id="2_3ajvb"]
-[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://scenes/tileset/tileset.tres" id="5_mqr7k"]
+[ext_resource type="TileSet" uid="uid://kljhv66b1iib" path="res://tileset.tres" id="5_mqr7k"]
 [ext_resource type="PackedScene" uid="uid://bco6rolib51q2" path="res://prefabs/NPC_shop.tscn" id="6_6p07i"]
 [ext_resource type="PackedScene" uid="uid://cuox1o5iwy1ms" path="res://entities/Player.tscn" id="7_v8nrs"]
 [ext_resource type="PackedScene" uid="uid://ctxis84dr5dql" path="res://inventory system/Shop_inventory_ui.tscn" id="9_ercg3"]
